@@ -1,4 +1,4 @@
-package org.zhd.test;
+package me.meet.test;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +16,7 @@ public class ClassLoaderTest {
                     + ClassLoaderTest.class.getClassLoader());
 
             //trying to explicitly load this class again using Extension class loader
-            Class.forName("org.zhd.test.ClassLoaderTest", true
+            Class.forName("me.meet.test.ClassLoaderTest", true
                     , ClassLoaderTest.class.getClassLoader().getParent());
             Class clazz = int.class;
 

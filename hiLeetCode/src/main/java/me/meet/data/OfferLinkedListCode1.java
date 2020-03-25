@@ -187,6 +187,50 @@ public final class OfferLinkedListCode1 {
         solveRegex("2[dd3[cc]]");
     }
 
+    /**
+     * 合并两个排序的链表
+     * 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+     *
+     * 思路
+     * 1、新建一个结点作为新链表头部的前一个元素
+     * 2、逐步遍历两个链表，加入小的元素为新链表的下一个节点
+     * 3、新链表最后一个元素指向剩余的链表
+     *
+     */
+    static Node mergeLinkedList(Node<Integer> a, Node<Integer> b) { // a: 递增； b: 递增
+        if (null == a) {
+            return b;
+        }
+        if (null == b) {
+            return a;
+        }
+
+        Node<Integer> cur = new Node<>(0, null);
+        for (; null != a && null != b;) {
+            if (a.data > b.data) {
+                cur.next = b;
+                b = b.next;
+            } else {
+                cur.next = a;
+                a = a.next;
+            }
+            cur = cur.next;
+        }
+        if (null != a) {
+            cur.next = a;
+        }
+        if (null != b) {
+            cur.next = b;
+        }
+        return cur.next;
+    }
+
+//    private static void testMergeLinkedList() {
+//        Node<Integer> _
+//        Node<Integer> a = new Node<>(1, null);
+//        Node<Integer> b
+//    }
+
     public static void main(String[] args) {
         testPrintSingleLinkedList();
         testReverseList();

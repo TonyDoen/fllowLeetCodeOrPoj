@@ -1,6 +1,7 @@
 package me.meet.data;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class OfferBinaryTreeMaxDistance {
     static class Node {
@@ -136,6 +137,172 @@ public class OfferBinaryTreeMaxDistance {
     }
 
     /**
+     * 判断一个二叉树是不是满二叉树
+     * 思路：
+     * 1.空树，满
+     * 2.左满右满，且左右深度相等，满
+     * 3.否则，非满
+     */
+    static boolean isFull(Node root) {
+        if (null == root) {
+            return true;
+        }
+        int lDepth = depth(root.left);
+        int rDepth = depth(root.right);
+        return isFull(root.left) && isFull(root.right) && (lDepth == rDepth);
+    }
+
+    private static void testIsFull() {
+        /**
+         *         1
+         *       /  \
+         *      2    3
+         *     / \  / \
+         *    4  5 6   7
+         *        /
+         *       8
+         */
+        Node _8 = new Node(8, null, null);
+        Node _7 = new Node(7, null, null);
+        Node _6 = new Node(6, _8, null);
+        Node _5 = new Node(5, null, null);
+        Node _4 = new Node(4, null, null);
+        Node _3 = new Node(3, _6, _7);
+        Node _2 = new Node(2, _4, _5);
+        Node _1 = new Node(1, _2, _3);
+
+        boolean res = isFull(_1);
+        System.out.println(res);
+    }
+
+    /**
+     * 判断一个二叉树是不是完全二叉树
+     *
+     * 思路：
+     * 完全二叉树特点1：
+     * 只允许最后一层有空缺结点且空缺在右边，即叶子结点只能在层次最大的两层上出现；
+     *
+     * 完全二叉树特点2：
+     * 对任一结点，如果其右子树的深度为j，则其左子树的深度必为j或j+1 即度为1的点只有1个或0个
+     *
+     * 完全二叉树树主要有两点：
+     * 1. 当一个结点有右孩子，但是没有左孩子，直接返回false
+     * 2. 当一个节点有左孩子无右孩子，那么接下来要遍历的节点必须是叶子结点。（叶子结点左右孩子为空）
+     */
+    static boolean isCompleteBinaryTree(Node root) {
+        if (null == root) {
+            return true;
+        }
+        LinkedList<Node> list = new LinkedList<>();
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        for (; !queue.isEmpty(); ) { // 层序遍历
+            for (int size = queue.size(); size > 0; size--) {
+                Node cur = queue.pop();
+                if (null != cur) {
+                    queue.add(cur.left);
+                    queue.add(cur.right);
+                }
+                list.push(cur); // 头插
+            }
+        }
+        for (; ; ) { // 去掉最左 空 结点
+            Node cur = list.peek();
+            if (null == cur) {
+                list.pop();
+            } else {
+                break;
+            }
+        }
+
+        for (Node cur; !list.isEmpty();) {
+            cur = list.pop();
+            if (null == cur) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 判断一个二叉树是不是完全二叉树
+     * 思路：
+     * 1. 层序遍历(层次遍历)
+     * 2. 层序遍历时 2种情况 可以判断不是完全二叉树
+     *   （1） 1    左子树null；右子树不是null
+     *         \
+     *          2
+     *
+     *   （2）         1       右子树是null；后继结点必然是叶子结点
+     *              /  \
+     *             2    3
+     *            / \
+     *           4  5
+     *          /
+     *         6
+     */
+    static boolean isCompleteBinaryTree1(Node root) {
+        if (null == root) {
+            return true;
+        }
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.add(root);
+        boolean isBreak = false;
+        for (; !queue.isEmpty(); ) { // 层序遍历
+            for (int size = queue.size(); size > 0; size--) {
+                Node cur = queue.pop();
+                // （2）右子树是null；后继结点必然是叶子结点
+                if (isBreak && (null != cur.left || null != cur.right)) {
+                    return false;
+                }
+                if (null == cur.right) {
+                    isBreak = true;
+                }
+                // （1）左子树null；右子树不是null
+                if (null == cur.left && null != cur.right) {
+                    return false;
+                }
+
+                if (null != cur.left) {
+                    queue.add(cur.left);
+                }
+                if (null != cur.right) {
+                    queue.add(cur.right);
+                }
+            }
+        }
+        return true;
+    }
+
+    private static void testIsCompleteBinaryTree() {
+        /**
+         *         1
+         *       /  \
+         *      2    3
+         *     / \  / \
+         *    4  5 6   7
+         *        /
+         *       8
+         */
+        Node _8 = new Node(8, null, null);
+        Node _7 = new Node(7, null, null);
+        Node _6 = new Node(6, _8, null);
+        Node _5 = new Node(5, null, null);
+        Node _4 = new Node(4, null, null);
+        Node _3 = new Node(3, _6, _7);
+        Node _2 = new Node(2, _4, _5);
+        Node _1 = new Node(1, _2, _3);
+
+        boolean res = isCompleteBinaryTree1(_1);
+        System.out.println(res);
+
+        boolean res1 = isCompleteBinaryTree1(_1);
+        System.out.println(res1);
+    }
+
+
+    /**
      * 求数列里的最大差值
      * a[1], a[2], a[3], ..., a[n]; what is max{a[j] - a[i]}, when j>i, a[i] > 0
      */
@@ -216,5 +383,7 @@ public class OfferBinaryTreeMaxDistance {
         checkReConstructBinaryTree();
         checkMaxRdx();
         checkIsBlance();
+        testIsCompleteBinaryTree();
+        testIsFull();
     }
 }

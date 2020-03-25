@@ -1,4 +1,4 @@
-package org.zhd.test.jsonTest;
+package me.meet.test.jsonTest;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;

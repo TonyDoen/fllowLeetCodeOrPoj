@@ -1,4 +1,4 @@
-package org.zhd.test;
+package me.meet.test;
 
 public class KMP {
     /**

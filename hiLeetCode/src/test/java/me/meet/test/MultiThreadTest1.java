@@ -1,4 +1,4 @@
-package org.zhd.test;
+package me.meet.test;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
