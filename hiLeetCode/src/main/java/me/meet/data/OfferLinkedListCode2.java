@@ -47,14 +47,14 @@ public final class OfferLinkedListCode2 {
         int len1 = 0;
         Node<Integer> cur1 = h1;
         for (; null != cur1; ) {
-            len1 ++;
+            len1++;
             cur1 = cur1.next;
         }
 
         int len2 = 0;
         Node<Integer> cur2 = h2;
         for (; null != cur2; ) {
-            len2 ++;
+            len2++;
             cur2 = cur2.next;
         }
 
@@ -74,7 +74,7 @@ public final class OfferLinkedListCode2 {
             fast = fast.next;
         }
 
-        for (; null != fast && null != slow;) {
+        for (; null != fast && null != slow; ) {
             if (fast == slow) {
                 return fast;
             }
@@ -149,7 +149,7 @@ public final class OfferLinkedListCode2 {
         // 1、快慢指针遍历链表，若相遇，则链表存在环
         // slow  走 1步; fast 走 2步
         Node meet = null, fast = head, slow = head;
-        for (; null != slow && null != fast && null != fast.next;) {
+        for (; null != slow && null != fast && null != fast.next; ) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {
@@ -163,14 +163,14 @@ public final class OfferLinkedListCode2 {
 
         // 2、一个指针从相遇的节点出发，一个从链表头部出发，两个指针相遇的位置即为环的入口节点
         Node cur = head;
-        for (; cur != meet;) {
+        for (; cur != meet; ) {
             cur = cur.next;
             meet = meet.next;
         }
         return cur;
     }
 
-    private static void testFindEntryNodeOfLoop() {
+    private static Node<Integer> loop() {
         /**
          * 1 -> 2 -> 3 -> 4 -> 5 -> 6
          *                |         |
@@ -188,14 +188,100 @@ public final class OfferLinkedListCode2 {
 
         // loop
         _9.next = _4;
+        return _1;
+    }
 
-        Node<Integer> res = findEntryNodeOfLoop(_1);
+    private static void testFindEntryNodeOfLoop() {
+        Node<Integer> res = findEntryNodeOfLoop(loop());
         System.out.println(res.data);
 
+    }
+
+    /**
+     * 链表中环的入口结点
+     * 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+     *
+     * 思路2：
+     * 1、两个指针遍历链表，一个一次走一步，一个一次两步，能相交到一个点，则证明有环，相交点必在环上
+     * 2、根据相交点，遍历一圈，再次到达原节点，即取得环的长度
+     * 3、取得环的长度len后，一个指针先走len步，一个在一起走，第一次到达相同的节点即为环的起始节点
+     */
+    static Node findEntryNodeOfLoop2(Node head) {
+        if (null == head || null == head.next) {
+            return null;
+        }
+        // 1、快慢指针遍历链表，若相遇，则链表存在环
+        // slow  走 1步; fast 走 2步
+        Node meet = null, fast = head, slow = head;
+        for (; null != slow && null != fast && null != fast.next; ) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                meet = slow;
+                break;
+            }
+        }
+        if (null == meet) { // no loop
+            return null;
+        }
+
+        // 2、根据相交点，遍历一圈，再次到达原节点，即取得环的长度
+        int loopLength = 0;
+        Node cur = meet;
+        do {
+            cur = cur.next;
+            loopLength++;
+        } while (cur != meet);
+
+        // 3、取得环的长度len后，一个指针先走len步，一个在一起走，第一次到达相同的节点即为环的起始节点
+        cur = head;
+        for (int i = 0; i < loopLength; i++) {
+            cur = cur.next;
+        }
+
+        meet = head;
+        for (; cur != meet; ) {
+            cur = cur.next;
+            meet = meet.next;
+        }
+        return cur;
+    }
+
+    private static void testFindEntryNodeOfLoop2() {
+        Node<Integer> res = findEntryNodeOfLoop2(loop());
+        System.out.println(res.data);
+    }
+
+    /**
+     * 链表中环的入口结点
+     * 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+     *
+     * 思路3：
+     * 1、断链法，可以改变原有链表结构时，可使用该方法
+     * 2、两指针遍历链表，一个起始指向第二个节点，另一个指向头节点，后一个指针一直断链，并依次推进两个指针，当前一个指针为null时，后一个指针会指向环的入口节点
+     */
+    static Node findEntryNodeOfLoop3(Node head) {
+        if (null == head || null == head.next) {
+            return null;
+        }
+        Node slow = head, fast = head.next;
+        for (; null != fast; ) {
+            slow.next = null;
+            slow = fast;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
+    private static void testFindEntryNodeOfLoop3() {
+        Node<Integer> res = findEntryNodeOfLoop3(loop());
+        System.out.println(res.data);
     }
 
     public static void main(String[] args) {
         testFindFirstCommonNode();
         testFindEntryNodeOfLoop();
+        testFindEntryNodeOfLoop2();
+        testFindEntryNodeOfLoop3();
     }
 }
