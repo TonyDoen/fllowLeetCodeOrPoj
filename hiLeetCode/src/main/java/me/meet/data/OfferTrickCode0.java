@@ -271,15 +271,41 @@ public class OfferTrickCode0 {
         System.out.println(res);
     }
 
+    /**
+     * 计算 n！ n的阶乘
+     * 时间复杂度 O(logN)
+     */
+    static int pow(int base, int n) {
+        if (0 == n) {
+            return 1;
+        }
+        if (1 == n) {
+            return base;
+        }
+        if (n >= 0) {
+            if (1 == n % 2) {
+                return pow(base * base, n / 2) * base;
+            } else {
+                return pow(base * base, n / 2);
+            }
+        } else {
+            return 1 / pow(base, -n);
+        }
+    }
+    private static void testPow() {
+        int res = pow(3, 17);
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
         testChessPlacing();
         testCountStep();
         testMinSteps();
-
         chessPlacing(4);
         testMoveLeftStep();
         testGetTargetPos();
         testNumber2Chinese();
         testLeftRotateStr();
+        testPow();
     }
 }

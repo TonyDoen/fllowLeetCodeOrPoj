@@ -31,8 +31,8 @@ public class OfferBinaryTreeMaxDistance {
         }
 
         public Result(int maxDist, int maxDepth) {
-            this.maxDepth = maxDepth;
             this.maxDist = maxDist;
+            this.maxDepth = maxDepth;
         }
     }
 
@@ -40,7 +40,7 @@ public class OfferBinaryTreeMaxDistance {
     /**
      * 找出二叉树中最远结点的距离
      * 二叉树中什么距离是最远距离。以根节点为轴，左右子树的最大深度？当然这只是一部分。准确地说，最大深度是以根节点为轴，左右子树的最大深度之和与以各个子树的根节点为轴左右子树的最大深度之和的较大值
-     * <p>
+     * 
      * 计算一个二叉树的最大距离有两个情况:
      * 情况A: 路径经过左子树的最深节点，通过根节点，再到右子树的最深节点。
      * 情况B: 路径不穿过根节点，而是左子树或右子树的最大距离路径，取其大者。
@@ -64,12 +64,12 @@ public class OfferBinaryTreeMaxDistance {
     /**
      * 题目描述
      * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
-     * <p>
+     * 
      * 先来分析一下前序遍历和中序遍历得到的结果，
      * 前序遍历第一位是根节点；
      * 中序遍历中，根节点左边的是根节点的左子树，右边是根节点的右子树。
      * 例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}。
-     * <p>
+     * 
      * 首先，根节点 是{ 1 }；
      * 左子树是：前序{ 2,4,7 } ，中序{ 4,7,2 }；
      * 右子树是：前序{ 3,5,6,8 } ，中序{ 5,3,8,6 }；
@@ -294,7 +294,7 @@ public class OfferBinaryTreeMaxDistance {
         Node _2 = new Node(2, _4, _5);
         Node _1 = new Node(1, _2, _3);
 
-        boolean res = isCompleteBinaryTree1(_1);
+        boolean res = isCompleteBinaryTree(_1);
         System.out.println(res);
 
         boolean res1 = isCompleteBinaryTree1(_1);

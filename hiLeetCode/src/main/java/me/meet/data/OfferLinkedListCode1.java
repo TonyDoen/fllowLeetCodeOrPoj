@@ -197,43 +197,58 @@ public final class OfferLinkedListCode1 {
      * 3、新链表最后一个元素指向剩余的链表
      *
      */
-    static Node mergeLinkedList(Node<Integer> a, Node<Integer> b) { // a: 递增； b: 递增
-        if (null == a) {
-            return b;
+    static Node<Integer> mergeLinkedList(Node<Integer> l1, Node<Integer> l2) { // a: 递增； b: 递增
+        if (null == l1) {
+            return l2;
         }
-        if (null == b) {
-            return a;
+        if (null == l2) {
+            return l1;
         }
 
-        Node<Integer> cur = new Node<>(0, null);
-        for (; null != a && null != b;) {
-            if (a.data > b.data) {
-                cur.next = b;
-                b = b.next;
+        Node<Integer> res = new Node<>(-1, null);
+        Node<Integer> cur = res;
+
+        Node<Integer> t1 = l1, t2 = l2;
+        for (; null != t1 && null != t2; ) {
+            if (t1.data > t2.data) {
+                cur.next = t2;
+                t2 = t2.next;
             } else {
-                cur.next = a;
-                a = a.next;
+                cur.next = t1;
+                t1 = t1.next;
             }
             cur = cur.next;
         }
-        if (null != a) {
-            cur.next = a;
+        if (null != t1) {
+            cur.next = t1;
         }
-        if (null != b) {
-            cur.next = b;
+        if (null != t2) {
+            cur.next = t2;
         }
-        return cur.next;
+        return res.next;
     }
 
-//    private static void testMergeLinkedList() {
-//        Node<Integer> _
-//        Node<Integer> a = new Node<>(1, null);
-//        Node<Integer> b
-//    }
+    private static void testMergeLinkedList() {
+        Node<Integer> _7 = new Node<>(7, null);
+        Node<Integer> _4 = new Node<>(4, _7);
+        Node<Integer> _1 = new Node<>(1, _4);
+
+        Node<Integer> _8 = new Node<>(8, null);
+        Node<Integer> _5 = new Node<>(5, _8);
+        Node<Integer> _2 = new Node<>(2, _5);
+
+        Node<Integer> res = mergeLinkedList(_1, _2);
+        for (; null != res; ) {
+            System.out.print(res.data + " ");
+            res = res.next;
+        }
+        System.out.println();
+    }
 
     public static void main(String[] args) {
         testPrintSingleLinkedList();
         testReverseList();
         testSolveRegex();
+        testMergeLinkedList();
     }
 }
