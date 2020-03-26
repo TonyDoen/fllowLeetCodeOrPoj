@@ -293,6 +293,102 @@ public final class OfferQueueStackCode1 {
         System.out.println();
     }
 
+    static class StackWithMinMax<T extends Comparable> {
+        private static class Nd<T extends Comparable> {
+            T data;
+            Nd next;
+
+            Nd(T data, Nd next) {
+                this.data = data;
+                this.next = next;
+            }
+        }
+
+        private Nd head;
+        private Nd max;
+        private Nd min;
+        
+        public boolean isEmpty() {
+            return null == head;
+        }
+
+        public void push(T data) {
+            if (null == data) {
+                return;
+            }
+
+            if (null == head) {
+                head = new Nd<>(data, null);
+                max = head;
+                min = head;
+            }
+            // head
+            Nd tmp = new Nd<>(data, head); // 头插
+            head = tmp;
+
+            // max
+            if (data.compareTo(max.data) > 0) {
+                tmp = new Nd<>(data, max);
+                max = tmp;
+            } else {
+                tmp = new Nd<>(max.data, max);
+                max = tmp;
+            }
+
+            // min
+            if (data.compareTo(min.data) < 0) {
+                tmp = new Nd<>(data, min);
+                min = tmp;
+            } else {
+                tmp = new Nd<>(min.data, min);
+                min = tmp;
+            }
+        }
+
+        public T pop() {
+            if (null == head) {
+                return null;
+            }
+
+            Nd<T> res = head;
+            head = head.next;
+            max = max.next;
+            min = min.next;
+            return res.data;
+        }
+
+        public T min() {
+            if (null == min) {
+                return null;
+            }
+            return (T) min.data;
+        }
+
+        public T max() {
+            if (null == max) {
+                return null;
+            }
+            return (T) max.data;
+        }
+    }
+
+    private static void testStackWithMinMax() {
+        StackWithMinMax<Integer> stack = new StackWithMinMax<>();
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        for (; !stack.isEmpty(); ) {
+            System.out.print(stack.min() + " ");
+            stack.pop();
+        }
+        System.out.println();
+    }
+
+
     /**
      * 栈的压入、弹出序列
      *
@@ -367,6 +463,7 @@ public final class OfferQueueStackCode1 {
         testSelfQueue();
         testStackByQueue();
         testQueueByStack();
+        testStackWithMinMax();
         testStackWithMin();
         testIsPopOrder();
     }

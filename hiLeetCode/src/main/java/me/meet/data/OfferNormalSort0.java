@@ -115,7 +115,7 @@ public final class OfferNormalSort0 {
     }
 
     // 合并函数，把两个有序的数组合并起来
-    // arr[left..mif]表示一个数组，arr[mid+1 .. right]表示一个数组
+    // arr[left..mid]表示一个数组，arr[mid+1 .. right]表示一个数组
     private static void merge(int[] arr, int left, int mid, int right) {
         //先用一个临时数组把他们合并汇总起来
         int[] a = new int[right - left + 1];
