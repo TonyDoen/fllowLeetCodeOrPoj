@@ -297,15 +297,47 @@ public class OfferTrickCode0 {
         System.out.println(res);
     }
 
+    /**
+     * 求数列里的最大差值
+     * a[1], a[2], a[3], ..., a[n]; what is max{a[j] - a[i]}, when j>i, a[i] > 0
+     */
+    private static void maxRdx(int[] arr) {
+        int len = arr.length;
+        if (len < 1) {
+            return;
+        }
+        int res = 0, min = arr[0];
+        for (int i = 0; i < len - 1; i++) {
+            int tmp1 = arr[i + 1] - arr[i];
+            int tmp2 = arr[i + 1] - min;
+            if (tmp2 > tmp1 && tmp2 > res) {
+                res = tmp2;
+            } else if (tmp1 > res) {
+                res = tmp1;
+            }
+
+            if (min > arr[i + 1]) {
+                min = arr[i + 1];
+            }
+        }
+
+        System.out.println("arr:" + Arrays.toString(arr) + "; res:" + res);
+    }
+
+    private static void testMaxRdx() {
+        int[] in = new int[]{4, 7, 2, 1, 5, 3, 8, 6};
+        maxRdx(in);
+    }
+
     public static void main(String[] args) {
         testChessPlacing();
         testCountStep();
         testMinSteps();
-        chessPlacing(4);
         testMoveLeftStep();
         testGetTargetPos();
         testNumber2Chinese();
         testLeftRotateStr();
         testPow();
+        testMaxRdx();
     }
 }

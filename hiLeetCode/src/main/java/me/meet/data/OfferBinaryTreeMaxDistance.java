@@ -1,6 +1,5 @@
 package me.meet.data;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class OfferBinaryTreeMaxDistance {
@@ -22,20 +21,6 @@ public class OfferBinaryTreeMaxDistance {
             this.right = right;
         }
     }
-
-    static class Result {
-        int maxDist; // 最远距离
-        int maxDepth; // 最大深度
-
-        public Result() {
-        }
-
-        public Result(int maxDist, int maxDepth) {
-            this.maxDist = maxDist;
-            this.maxDepth = maxDepth;
-        }
-    }
-
 
     /**
      * 找出二叉树中最远结点的距离
@@ -60,6 +45,24 @@ public class OfferBinaryTreeMaxDistance {
         return result;
     }
 
+    static class Result {
+        int maxDist;  // 最远距离
+        int maxDepth; // 最大深度
+
+        public Result() {
+        }
+
+        public Result(int maxDist, int maxDepth) {
+            this.maxDist = maxDist;
+            this.maxDepth = maxDepth;
+        }
+    }
+
+    private static void testMaxDistance() {
+        Node root = buildTree();
+        Result result = maxDistance(root);
+        System.out.println(result);
+    }
 
     /**
      * 题目描述
@@ -111,6 +114,13 @@ public class OfferBinaryTreeMaxDistance {
         return tree;
     }
 
+    private static void testReConstructBinaryTree() {
+        int[] pre = new int[]{1,2,4,7,3,5,6,8};
+        int[] in = new int[]{4,7,2,1,5,3,8,6};
+        Node result = reConstructBinaryTree(pre, in);
+        System.out.println(result);
+    }
+
     /**
      * 判断一个二叉排序树是不是平衡二叉树
      */
@@ -136,12 +146,31 @@ public class OfferBinaryTreeMaxDistance {
         }
     }
 
+    private static void testIsBalance() {
+        /**
+         *      0
+         *     / |
+         *    1   2
+         *   /
+         *  3
+         */
+        Node _3 = new Node(3, null, null);
+        Node _1 = new Node(1, _3, null);
+        Node _2 = new Node(2, null, null);
+        Node root = new Node(0, _1, _2);
+        boolean result = isBalance(root);
+        System.out.println("平衡否？" + result);
+    }
+
     /**
      * 判断一个二叉树是不是满二叉树
      * 思路：
      * 1.空树，满
      * 2.左满右满，且左右深度相等，满
      * 3.否则，非满
+     *
+     * 思路：
+     * 计数，因为满二叉树的结点每层是固定的
      */
     static boolean isFull(Node root) {
         if (null == root) {
@@ -301,46 +330,6 @@ public class OfferBinaryTreeMaxDistance {
         System.out.println(res1);
     }
 
-
-    /**
-     * 求数列里的最大差值
-     * a[1], a[2], a[3], ..., a[n]; what is max{a[j] - a[i]}, when j>i, a[i] > 0
-     */
-    private static void maxRdx(int[] arr) {
-        int len = arr.length;
-        if (len < 1) {
-            return;
-        }
-        int res = 0, min = arr[0];
-        for (int i = 0; i < len - 1; i++) {
-            int tmp1 = arr[i+1] - arr[i];
-            int tmp2 = arr[i+1] - min;
-            if (tmp2 > tmp1 && tmp2 > res) {
-                res = tmp2;
-            } else if (tmp1 > res) {
-                res = tmp1;
-            }
-
-            if (min > arr[i+1]) {
-                min = arr[i+1];
-            }
-        }
-
-        System.out.println("arr:"+ Arrays.toString(arr) + "; res:" + res);
-    }
-
-    private static void checkMaxRdx() {
-        int[] in = new int[]{4,7,2,1,5,3,8,6};
-        maxRdx(in);
-    }
-
-    private static void checkReConstructBinaryTree() {
-        int[] pre = new int[]{1,2,4,7,3,5,6,8};
-        int[] in = new int[]{4,7,2,1,5,3,8,6};
-        Node result = reConstructBinaryTree(pre, in);
-        System.out.println(result);
-    }
-
     private static Node buildTree() {
         /**
          *      0
@@ -356,33 +345,10 @@ public class OfferBinaryTreeMaxDistance {
         return root;
     }
 
-    private static void checkMaxDistance() {
-        Node root = buildTree();
-        Result result = maxDistance(root);
-        System.out.println(result);
-    }
-
-    private static void checkIsBlance() {
-        /**
-         *      0
-         *     / |
-         *    1   2
-         *   /
-         *  3
-         */
-        Node _3 = new Node(3, null, null);
-        Node _1 = new Node(1, _3, null);
-        Node _2 = new Node(2, null, null);
-        Node root = new Node(0, _1, _2);
-        boolean result = isBalance(root);
-        System.out.println("平衡否？" + result);
-    }
-
     public static void main(String[] args) {
-        checkMaxDistance();
-        checkReConstructBinaryTree();
-        checkMaxRdx();
-        checkIsBlance();
+        testMaxDistance();
+        testReConstructBinaryTree();
+        testIsBalance();
         testIsCompleteBinaryTree();
         testIsFull();
     }
