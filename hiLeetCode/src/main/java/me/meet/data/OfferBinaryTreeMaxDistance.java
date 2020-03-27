@@ -345,11 +345,46 @@ public class OfferBinaryTreeMaxDistance {
         return root;
     }
 
+    /**
+     * 判断 两个二叉树 是否完全相同(树型相同，结点大小相同)
+     * 思路：递归遍历
+     */
+    static boolean checkTree(Node n1, Node n2) {
+        if (null == n1 && null == n2) {
+            return true;
+        }
+        if (null == n1 || null == n2) {
+            return false;
+        }
+        if (n1.val != n2.val) {
+            return false;
+        }
+
+        boolean isLeft = checkTree(n1.left, n2.left);
+        boolean isRight = checkTree(n1.right, n2.right);
+        return isLeft && isRight;
+    }
+
+    private static void testCheckTree() {
+        Node n1 = buildTree();
+//        Node n2 = buildTree();
+
+        Node _4 = new Node(4, null, null);
+        Node _3 = new Node(3, null, null);
+        Node _1 = new Node(1, _3, _4);
+        Node _2 = new Node(2, null, null);
+        Node n2 = new Node(0, _1, _2);
+
+        boolean res = checkTree(n1, n2);
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
         testMaxDistance();
         testReConstructBinaryTree();
         testIsBalance();
         testIsCompleteBinaryTree();
         testIsFull();
+        testCheckTree();
     }
 }

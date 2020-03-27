@@ -235,12 +235,10 @@ public final class OfferLinkedListCode3 {
     }
 
     public static void main(String[] args) {
-//        testDeleteDuplicate();
-//        testDeleteDuplicationRemainFirstOne();
-//        testDeleteDuplicationRemainLastOne();
-//        testReverseKStep();
+        testDeleteDuplicate();
+        testDeleteDuplicationRemainFirstOne();
+        testDeleteDuplicationRemainLastOne();
+        testReverseKStep();
 
-        double res = Math.pow(2, 31)/1024/1024/1024;
-        System.out.println(res);
     }
 }

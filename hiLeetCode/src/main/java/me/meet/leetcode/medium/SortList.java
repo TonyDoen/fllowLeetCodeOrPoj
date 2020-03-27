@@ -175,6 +175,7 @@ public final class SortList {
         qSort(head, null);
         return head;
     }
+
     private static void qSort(Node begin, Node end) {
         if (begin != end && begin.next != end) {
             Node p = partition(begin, end);
@@ -182,10 +183,11 @@ public final class SortList {
             qSort(p.next, end);
         }
     }
+
     private static Node partition(Node begin, Node end) {
         int baseVal = begin.val;
         Node base = begin, cur = begin.next;
-        for (; cur != end;) {
+        for (; cur != end; ) {
             if (cur.val < baseVal) {
                 base = base.next;
                 // swap (base, cur)
@@ -202,6 +204,7 @@ public final class SortList {
 
         return base;
     }
+
     private static void testQuickSort() {
         Node _3 = new Node(3, null);
         Node _1 = new Node(1, _3);
