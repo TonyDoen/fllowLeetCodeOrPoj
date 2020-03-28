@@ -1,6 +1,6 @@
 package me.meet.data;
 
-public final class OfferNormalSort0 {
+public final class OfferNormalSortCode0 {
     /**
      * 快速排序
      * 1、时间复杂度：O(n*logn)  2、空间复杂度：O(logn)  3、非稳定排序  4、原地排序

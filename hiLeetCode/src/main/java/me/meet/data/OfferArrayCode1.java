@@ -105,6 +105,11 @@ public final class OfferArrayCode1 {
         return ((int)(Math.pow(n, 2)+n)) >> 1;
     }
 
+    private static void testCountN() {
+        System.out.println(countN(6));
+        System.out.println(countN1(6));
+    }
+
     /**
      * 有个游戏是这样的:首先,让小朋友们围成一个大圈。
      * 然后,他随机指定一个数m,让编号为0的小朋友开始报数。
@@ -114,6 +119,8 @@ public final class OfferArrayCode1 {
      *
      *
      * 思路2、利用链表，每次移动m-1次，删除元素即可
+     *
+     * 思路1：递推公式
      */
     static int lastRemaining(int n, int m) {
         if (n < 1 || m < 1) {
@@ -135,9 +142,56 @@ public final class OfferArrayCode1 {
         return tmp.get(0);
     }
 
+    /**
+     * 题目：
+     * 二维数组中的查找 -- 剑指Offer 1
+     *
+     * 题目描述：
+     * 在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，
+     * 每一列都按照从上到下递增的顺序排序。
+     *
+     * 请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+     *
+     */
+    /**
+     * 思路：
+     * 1、根据数组特点，从右上角位置开始查找
+     * 2、如果相等，返回true即可
+     * 3、如果目标值大于当前值，忽略本行，继续查找
+     * 4、如果目标值小于当前值，忽略本列，继续查找
+     */
+    static boolean twoDimensionalArrayLookup(int [][] arr, int target) {
+        if (null == arr || arr.length < 1 || arr[0].length < 1) {
+            return false;
+        }
+        int row = arr[0].length, i = 0, j = arr[0].length - 1; // 右上角位置
+        while (i < row && j >= 0) {
+            int curVal = arr[i][j];
+            if (curVal == target) {
+                return true;
+            } else if (curVal < target) { // 忽略本行，继续查找
+                i++;
+            } else {                      // 忽略本列继续查找
+                j--;
+            }
+        }
+        return false;
+    }
+
+    private static void testTwoDimensionalArrayLookup() {
+        int[][] arr = {
+                {1,2,7},
+                {3,5,8},
+                {5,6,9}};
+        int target = 6;
+        boolean res = twoDimensionalArrayLookup(arr, target);
+        System.out.println(res);
+    }
 
     public static void main(String[] args) {
         testMedianNumber();
         testFindDuplicate();
+        testCountN();
+        testTwoDimensionalArrayLookup();
     }
 }
