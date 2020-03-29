@@ -2,7 +2,7 @@ package me.meet.data;
 
 import java.util.LinkedList;
 
-public class OfferBinaryTreeMaxDistance {
+public class OfferBinaryTreeCode0 {
     static class Node {
         Object val;
         Node left;

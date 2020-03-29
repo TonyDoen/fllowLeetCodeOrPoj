@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * url: https://blog.csdn.net/zangdaiyang1991/article/details/91904596
  */
-public final class OfferQueueStackCode2 {
+public final class OfferQueueStackCode0 {
     /**
      * 滑动窗口的最大值
      *

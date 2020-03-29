@@ -3,8 +3,8 @@ package me.meet.data;
 /**
  * url: https://blog.csdn.net/zangdaiyang1991/article/details/88616832
  */
-public final class OfferLinkedListCode4 {
-    private OfferLinkedListCode4() {
+public final class OfferLinkedListCode0 {
+    private OfferLinkedListCode0() {
     }
 
     static class Node<T> {
