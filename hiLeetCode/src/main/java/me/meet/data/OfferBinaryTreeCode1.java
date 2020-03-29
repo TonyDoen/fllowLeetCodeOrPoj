@@ -1,6 +1,8 @@
 package me.meet.data;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public final class OfferBinaryTreeCode1 {
@@ -243,9 +245,112 @@ public final class OfferBinaryTreeCode1 {
         printFromTopToBottom(_2u);
     }
 
+    /**
+     * 二叉搜索树的后序遍历序列
+     *
+     * 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。
+     * 如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+     *
+     * 思路(递归)：
+     * 1、后序遍历的特征为 根节点在序列的最后 值为rootVal
+     * 2、序列上半部分的值都小于rootVal，下部分的值都大于rootVal
+     * 3、递归判断上半部分、下半部分的序列，是否是树的后序遍历序列
+     */
+    static boolean verifySequenceOfBST(int[] sequence) {
+        if (null == sequence || sequence.length < 1) {
+            return false;
+        }
+        return verifySequenceOfBST(sequence, 0, sequence.length - 1);
+    }
+
+    private static boolean verifySequenceOfBST(int[] sequence, int begin, int end) {
+        if (begin >= end) {             // 一个元素时，为后序遍历序列
+            return true;
+        }
+        int rootVal = sequence[end];    // root节点的值
+        int leftEnd = begin;            // 序列中的最后一个左子树节点
+        int i = begin;
+
+        while (sequence[i] < rootVal) { // 遍历找到左子树的序列 与 右子树序列, 获取分割索引
+            leftEnd = i;
+            i++;
+        }
+        while (i < end) {               // 判断leftEnd序列后的值,如果存在元素小于rootVal,则不是后序序列
+            if (sequence[i] < rootVal) {
+                return false;
+            }
+            i++;
+        }
+        return verifySequenceOfBST(sequence, begin, leftEnd) && verifySequenceOfBST(sequence, leftEnd + 1, end - 1);
+    }
+
+    private static void testVerifySequenceOfBST() {
+        int[] sequence = {1, 2, 3, 4, 5};
+        boolean res = verifySequenceOfBST(sequence);
+        System.out.println(res);
+    }
+
+    /**
+     * 二叉树中和为某一值的路径
+     *
+     * 题目描述：
+     * 输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。
+     * 路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
+     * (注意: 在返回值的list中，数组长度大的数组靠前)
+     * 
+     * 思路：
+     *  1、用深度优先搜索DFS
+     *  2、每当DFS搜索到新节点时，都要保存该节点。而且每当找出一条路径之后，都将这个保存到list的路径保存到最终结果二维list中
+     *  3、并且，每当DFS搜索到子节点，发现不是路径和时，返回上一个结点时，需要把该节点从list中移除
+     */
+    static List<List<Integer>> findPath(Node<Integer> root, int target) {
+        if (null == root) {
+            return Collections.emptyList();
+        }
+        List<List<Integer>> result = new LinkedList<>();
+        findPath(result, new LinkedList<>(), target, root);
+        return result;
+    }
+
+    private static void findPath(List<List<Integer>> result, LinkedList<Integer> one, int target, Node<Integer> node) {
+        if (null == node) {
+            return;
+        }
+        one.add(node.value);
+
+        int remainVal = target - node.value;
+        if (0 == remainVal && null == node.left && null == node.right) {
+            result.add(new LinkedList<>(one));
+        }
+
+        findPath(result, one, remainVal, node.left);
+        findPath(result, one, remainVal, node.right);
+        one.removeLast();
+    }
+
+    private static void testFindPath() {
+        /**
+         *      1
+         *    /  \
+         *   2    3
+         *  / \
+         * 4   5
+         */
+        Node<Integer> _5 = new Node<>(5, null, null);
+        Node<Integer> _4 = new Node<>(4, null, null);
+        Node<Integer> _3 = new Node<>(3, null, null);
+        Node<Integer> _2 = new Node<>(2, _4, _5);
+        Node<Integer> _1 = new Node<>(1, _2, _3);
+
+        List<List<Integer>> res = findPath(_1, 8);
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
         testHasSubtree();
         testMirrorTree();
         testPrintFromTopToBottom();
+        testVerifySequenceOfBST();
+        testFindPath();
     }
 }
