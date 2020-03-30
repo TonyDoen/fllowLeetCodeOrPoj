@@ -91,25 +91,23 @@ public class OfferBinaryTreeCode0 {
     // 核心递归
     public static Node reConstructBinaryTreeCore(int[] pre, int[] in, int preStart, int preEnd, int inStart,
                                                  int inEnd) {
-        Node tree = new Node(pre[preStart]);
-        tree.left = null;
-        tree.right = null;
+        Node tree = new Node(pre[preStart], null, null);
         if (preStart == preEnd && inStart == inEnd) {
             return tree;
         }
-        int root = 0;
-        for (root = inStart; root < inEnd; root++) {
-            if (pre[preStart] == in[root]) {
+        int rootIdx = 0;
+        for (rootIdx = inStart; rootIdx < inEnd; rootIdx++) {
+            if (pre[preStart] == in[rootIdx]) {
                 break;
             }
         }
-        int leifLength = root - inStart;
-        int rightLength = inEnd - root;
-        if (leifLength > 0) {
-            tree.left = reConstructBinaryTreeCore(pre, in, preStart + 1, preStart + leifLength, inStart, root - 1);
+        int leftLength = rootIdx - inStart;
+        int rightLength = inEnd - rootIdx;
+        if (leftLength > 0) {
+            tree.left = reConstructBinaryTreeCore(pre, in, preStart + 1, preStart + leftLength, inStart, rootIdx - 1);
         }
         if (rightLength > 0) {
-            tree.right = reConstructBinaryTreeCore(pre, in, preStart + 1 + leifLength, preEnd, root + 1, inEnd);
+            tree.right = reConstructBinaryTreeCore(pre, in, preStart + 1 + leftLength, preEnd, rootIdx + 1, inEnd);
         }
         return tree;
     }
@@ -122,7 +120,7 @@ public class OfferBinaryTreeCode0 {
     }
 
     /**
-     * 判断一个二叉排序树是不是平衡二叉树
+     * 二叉树的深度
      */
     private static int depth(Node node) {
         if (null == node) {
@@ -380,7 +378,7 @@ public class OfferBinaryTreeCode0 {
     }
 
     /**
-     * 对称的二叉树
+     * 058-对称的二叉树
      *
      * 请实现一个函数，用来判断一颗二叉树是不是对称的。
      * 注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。
