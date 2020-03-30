@@ -416,6 +416,78 @@ public final class OfferBinaryTreeCode1 {
         System.out.println();
     }
 
+    /**
+     * 二叉树的下一个结点
+     *
+     * 给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。
+     * 注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
+     *
+     * 思路：
+     * 分析二叉树的下一个节点，一共有以下情况：
+     * 1.二叉树为空，则返回空；
+     * 2.节点右孩子存在，则设置一个指针从该节点的右孩子出发，一直沿着指向左子结点的指针找到的叶子节点即为下一个节点；
+     * 3.节点右孩子不存在，节点是根节点，返回null。
+     *   节点不是根节点，如果该节点是其父节点的左孩子，则返回父节点；
+     *   否则继续向上遍历其父节点的父节点，重复之前的判断，返回结果。
+     *
+     */
+    static class Nd<T extends Comparable> extends Node<T> {
+        Nd parent;
+        Nd(T value, Nd<T> left, Nd<T> right) {
+            super(value, left, right);
+        }
+    }
+    static Nd getInOrderNext(Nd node) {
+        if (null == node) {                 // 1.二叉树为空，则返回空；
+            return null;
+        }
+        Nd cur = node;
+        if (null != cur.right) {            // 2.节点右孩子存在，则设置一个指针从该节点的右孩子出发，一直沿着指向左子结点的指针找到的叶子节点即为下一个节点；
+            cur = (Nd)cur.right;
+            for (; null != cur.left;) {
+                cur = (Nd)cur.left;
+            }
+            return cur;
+        }
+
+        for (; null != cur.parent;) {       // 3.节点右孩子不存在，节点是根节点，返回null。
+            if (cur == cur.parent.left) {   //   节点不是根节点，如果该节点是其父节点的左孩子，则返回父节点；
+                return cur.parent;
+            }
+            cur = cur.parent;               //   否则继续向上遍历其父节点的父节点，重复之前的判断，返回结果。
+        }
+        return null;
+    }
+
+    private static void testGetInOrderNext() {
+        /**
+         *      4
+         *    /  \
+         *   2    5
+         *  / \
+         * 1   3
+         */
+        Nd<Integer> _3 = new Nd<>(3, null, null);
+        Nd<Integer> _1 = new Nd<>(1, null, null);
+        Nd<Integer> _2 = new Nd<>(2, _1, _3);
+        Nd<Integer> _5 = new Nd<>(5, null, null);
+        Nd<Integer> _4 = new Nd<>(4, _2, _5);
+        _2.parent = _4;
+        _5.parent = _4;
+        _1.parent = _2;
+        _3.parent = _2;
+
+        Nd<Integer> res1 = getInOrderNext(_2);
+        System.out.println(res1.value);
+
+        Nd<Integer> res2 = getInOrderNext(_4);
+        System.out.println(res2.value);
+
+        Nd<Integer> res3 = getInOrderNext(_5);
+        System.out.println(res3);
+    }
+
+
     public static void main(String[] args) {
         testHasSubtree();
         testMirrorTree();
@@ -423,5 +495,6 @@ public final class OfferBinaryTreeCode1 {
         testVerifySequenceOfBST();
         testFindPath();
         testConvertTree2LinkedList();
+        testGetInOrderNext();
     }
 }
