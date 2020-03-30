@@ -346,11 +346,82 @@ public final class OfferBinaryTreeCode1 {
         System.out.println(res);
     }
 
+    /**
+     * 二叉搜索树与双向链表
+     *
+     * 题目描述
+     * 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
+     *
+     * 思路
+     * 1、中序遍历BST的结果是排序的
+     * 2、按照遍历顺序组建为双向链表即可
+     *
+     *
+     * 中序遍历过程：
+     * 1、利用栈与当前节点的指针
+     * 2、处理根节点，如果有左孩子，就处理左孩子，记左孩子为链表的最后一个节点，后续指向当前节点
+     * 3、如果左孩子为空，记录当前节点为链表的最后一个节点
+     * 4、处理右孩子节点
+     */
+    static Node convertTree2LinkedList(Node node) {
+        if (null == node) {
+            return null;
+        }
+
+        Node head = null;
+        LinkedList<Node> stack = new LinkedList<>();
+        for (Node pre = null, cur = node; !stack.isEmpty() || null != cur;) {
+            // 左
+            for (;null != cur;) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            // 中（处理）
+            cur = stack.pop();
+            if (null == pre) {
+                head = cur;
+                pre = head;
+            } else {
+                pre.right = cur; // 构建双向链表
+                cur.left = pre;
+
+                pre = cur;       // 推进pre
+            }
+            // 右
+            cur = cur.right;     // 指向右孩子
+        }
+        return head;
+    }
+
+    private static void testConvertTree2LinkedList() {
+        /**
+         *      4
+         *    /  \
+         *   2    5
+         *  / \
+         * 1   3
+         */
+        Node<Integer> _3 = new Node<>(3, null, null);
+        Node<Integer> _1 = new Node<>(1, null, null);
+        Node<Integer> _2 = new Node<>(2, _1, _3);
+        Node<Integer> _5 = new Node<>(5, null, null);
+        Node<Integer> _4 = new Node<>(4, _2, _5);
+
+        Node res = convertTree2LinkedList(_4);
+
+        for (; null != res;) {
+            System.out.print(res.value + " ");
+            res = res.right;
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         testHasSubtree();
         testMirrorTree();
         testPrintFromTopToBottom();
         testVerifySequenceOfBST();
         testFindPath();
+        testConvertTree2LinkedList();
     }
 }
