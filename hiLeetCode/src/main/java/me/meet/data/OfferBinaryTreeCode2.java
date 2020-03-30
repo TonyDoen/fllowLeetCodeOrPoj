@@ -91,7 +91,6 @@ public final class OfferBinaryTreeCode2 {
         LinkedList<Node<Integer>> cache = new LinkedList<>();
         helpKthInBST(cache, k, root);
         return k <= cache.size() ? cache.get(k - 1) : null;
-
     }
 
     private static void helpKthInBST(LinkedList<Node<Integer>> cache, int k, Node<Integer> node) {
@@ -104,6 +103,31 @@ public final class OfferBinaryTreeCode2 {
             return;
         }
         helpKthInBST(cache, k, node.right);
+    }
+
+    /**
+     * 思路：
+     * 1、非递归中序遍历，遍历到第k个元素停止遍历
+     */
+    static Node<Integer> kthInBST2(Node<Integer> root, int k) {
+        if (null == root || k <= 0) {
+            return null;
+        }
+        LinkedList<Node<Integer>> cache = new LinkedList<>();
+        LinkedList<Node<Integer>> stack = new LinkedList<>();
+        for (Node cur = root; !stack.isEmpty() || null != cur;) {
+            for (; null != cur;) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cache.add(cur);
+            if (cache.size() == k) {
+                break;
+            }
+            cur = cur.right;
+        }
+        return k <= cache.size() ? cache.get(k - 1) : null;
     }
 
     private static void testKthInBST() {
@@ -122,6 +146,9 @@ public final class OfferBinaryTreeCode2 {
 
         Node<Integer> res = kthInBST(_4, 2);
         System.out.println(res.value);
+
+        Node<Integer> res2 = kthInBST2(_4, 3);
+        System.out.println(res2.value);
     }
 
     public static void main(String[] args) {

@@ -272,7 +272,11 @@ public class OfferTrickCode0 {
     }
 
     /**
-     * 计算 n！ n的阶乘
+     * 计算 base 的 n次方
+     * 时间复杂度 O(logN)
+     *
+     * n为偶数，a^n=a^n/2*a^n/2;
+     * n为奇数，a^n=（a^（n-1）/2）*（a^（n-1/2））*a
      * 时间复杂度 O(logN)
      */
     static int pow(int base, int n) {
@@ -292,6 +296,7 @@ public class OfferTrickCode0 {
             return 1 / pow(base, -n);
         }
     }
+
     private static void testPow() {
         int res = pow(3, 17);
         System.out.println(res);
