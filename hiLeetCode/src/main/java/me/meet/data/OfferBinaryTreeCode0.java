@@ -379,6 +379,55 @@ public class OfferBinaryTreeCode0 {
         System.out.println(res);
     }
 
+    /**
+     * 对称的二叉树
+     *
+     * 请实现一个函数，用来判断一颗二叉树是不是对称的。
+     * 注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。
+     *
+     * 思路1： 
+     * 1、递归判断两侧的节点是否是对称的
+     */
+    static boolean isSymmetricalTree(Node node) {
+        if (null == node) {
+            return true;
+        }
+        return isSymmetrical(node.left, node.right);
+    }
+
+    private static boolean isSymmetrical(Node left, Node right) {
+        if (null == left && null == right) {
+            return true;
+        }
+        if (null == left || null == right) {
+            return false;
+        }
+        if (left.val != right.val) {
+            return false;
+        }
+        return isSymmetrical(left.left, right.right) && isSymmetrical(left.right, right.left);
+    }
+
+    private static void testIsSymmetricalTree() {
+        /**
+         *         1
+         *       /  \
+         *      2    2
+         *     / \  / \
+         *    6  7 7   6
+         */
+        Node _7u = new Node(7, null, null);
+        Node _6u = new Node(6, null, null);
+        Node _7 = new Node(7, null, null);
+        Node _6 = new Node(6, null, null);
+        Node _2u = new Node(2, _7u, _6u);
+        Node _2 = new Node(2, _6, _7);
+        Node _1 = new Node(1, _2, _2u);
+
+        boolean res = isSymmetricalTree(_1);
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
         testMaxDistance();
         testReConstructBinaryTree();
@@ -386,5 +435,6 @@ public class OfferBinaryTreeCode0 {
         testIsCompleteBinaryTree();
         testIsFull();
         testCheckTree();
+        testIsSymmetricalTree();
     }
 }
