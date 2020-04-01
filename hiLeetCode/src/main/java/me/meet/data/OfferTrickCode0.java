@@ -54,6 +54,22 @@ public class OfferTrickCode0 {
         return f[n];
     }
 
+    /**
+     * 009-变态跳台阶
+     * 一只青蛙一次可以跳上1级台阶，也可以跳上3级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
+     * 这里主要有两种思路，我感觉第二种更好理解一点。
+     * 1. 假设：f(n)表示：n个台阶第一次1,2,...n阶的跳法数; 若第一次跳了1阶，则还剩n-1阶，
+     * 　　假设：f(n-1)表示：n-1个台阶第一次1,2,...n-1阶的跳法数; 若第一次跳了2阶，则还剩n-2阶，
+     * 　　假设：f(n-2)表示：n-1个台阶第一次1,2,...n-2阶的跳法数;
+     *     ...
+     * 　　把所以可能的情况（第一次可能跳1,2,...,n阶）加起来：
+     * 　　可以求出：f(n) = f(n-1) + f(n-2) + ... + f(1)
+     * 　　递归：f(n-1) = f(n-2) + ... + f(1)
+     * 　　可以求出：f(n) = 2*f(n-1)
+     *
+     * 2. 每个台阶可以跳或者不跳
+     */
+
     private static void testCountStep() {
         int res = countStep(12);
         System.out.println(res);
@@ -107,7 +123,7 @@ public class OfferTrickCode0 {
      * 情况4: 1 2 3 4 5 6 7 => 左移 0 位
      *    left     mid    right          => left < right; (mid < right; mid >left;)
      */
-    public static int moveLeftStep(int[] arr) { // error
+    public static int moveLeftStep(int[] arr) {
         if (null == arr || arr.length < 1) {
             return 0;
         }
@@ -159,7 +175,7 @@ public class OfferTrickCode0 {
         }
         int left = 0, right = arr.length - 1;
         for (; left < right;) {
-            int mid = (left + (right - left))/2;
+            int mid = left + (right - left)/2;
             if (arr[mid] > target) {
                 right = mid - 1;
             } else if (arr[mid] < target) {
