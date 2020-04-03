@@ -101,25 +101,20 @@ public final class StackAndQueue {
                 return;
             }
             // head
-            Node<T> tmp = new Node<>(data, head); // 头插
-            head = tmp;
+            head = new Node<>(data, head); // 头插
 
             // max
             if (data.compareTo(max.data) > 0) {
-                tmp = new Node<>(data, max);
-                max = tmp;
+                max = new Node<>(data, max);
             } else {
-                tmp = new Node<>(max.data, max);
-                max = tmp;
+                max = new Node<>(max.data, max);
             }
 
             // min
             if (data.compareTo(min.data) < 0) {
-                tmp = new Node<>(data, min);
-                min = tmp;
+                min = new Node<>(data, min);
             } else {
-                tmp = new Node<>(min.data, min);
-                min = tmp;
+                min = new Node<>(min.data, min);
             }
         }
 
@@ -167,18 +162,18 @@ public final class StackAndQueue {
             s2.push(i);
         }
 
-        for (; !s1.isEmpty();) {
+        for (; !s1.isEmpty(); ) {
             System.out.print(s1.poll() + " ");
         }
         System.out.println();
 
-        for (; !q1.isEmpty();) {
-            System.out.print(q1.poll()+ " ");
+        for (; !q1.isEmpty(); ) {
+            System.out.print(q1.poll() + " ");
         }
         System.out.println();
 
-        for (; !s2.isEmpty();) {
-            System.out.print(s2.pop()+" ");
+        for (; !s2.isEmpty(); ) {
+            System.out.print("; min:" + s2.min() + "; max:" + s2.max()+"; cur:" + s2.pop());
         }
         System.out.println();
     }
