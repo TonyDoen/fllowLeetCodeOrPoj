@@ -261,19 +261,19 @@ public final class Tree {
         Node<Integer> _1 = new Node<>(1, _2, _3);
 
         printFromTopToBottom(_1, (Visit<Node<Integer>>) it -> {
-            System.out.print("[root:"+it.value+";left:"+(null == it.left?null:it.left.value)+";right:"+(null == it.right?null:it.right.value)+"]");
+            System.out.print("[root:" + it.value + ";left:" + (null == it.left ? null : it.left.value) + ";right:" + (null == it.right ? null : it.right.value) + "]");
         });
 
         System.out.println();
         mirrorTree(_1);
         printFromTopToBottom(_1, (Visit<Node<Integer>>) it -> {
-            System.out.print("[root:"+it.value+";left:"+(null == it.left?null:it.left.value)+";right:"+(null == it.right?null:it.right.value)+"]");
+            System.out.print("[root:" + it.value + ";left:" + (null == it.left ? null : it.left.value) + ";right:" + (null == it.right ? null : it.right.value) + "]");
         });
 
         System.out.println();
         mirrorTree2(_1);
         printFromTopToBottom(_1, (Visit<Node<Integer>>) it -> {
-            System.out.print("[root:"+it.value+";left:"+(null == it.left?null:it.left.value)+";right:"+(null == it.right?null:it.right.value)+"]");
+            System.out.print("[root:" + it.value + ";left:" + (null == it.left ? null : it.left.value) + ";right:" + (null == it.right ? null : it.right.value) + "]");
         });
         System.out.println();
     }
