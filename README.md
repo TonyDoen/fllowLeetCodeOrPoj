@@ -1,4 +1,4 @@
 # followLeetCodeOrPoj
 
-1. hiLeetCode      部分 LeetCode 代码实现
-
+1. [hiLeetCode](https://github.com/TonyDoen/followLeetCodeOrPoj/tree/master/hiLeetCode)
+记录 leetcode 部分解题思路和Java代码。剑指Offer部分解题思路和Java代码。GoF 23种设计模式示例代码。
