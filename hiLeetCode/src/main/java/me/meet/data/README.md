@@ -1,7 +1,7 @@
 
 ## 数据结构类题目
 
-###### LinkedList
+###### [LinkedList](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerStructure/LinkedList.java)
 
 `003-从尾到头打印链表`
 
@@ -19,7 +19,7 @@
 
 `056-删除链表中重复的结点`
 
-###### Tree
+###### [Tree](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerStructure/Tree.java)
 
 `004-重建二叉树`
 
@@ -51,7 +51,7 @@
 
 `062-二叉搜索树的第k个结点`
 
-###### Stack & Queue
+###### [Stack & Queue](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerStructure/StackAndQueue.java)
 
 `005-用两个栈实现队列`
 
@@ -63,15 +63,15 @@
 
 `064-滑动窗口的最大值(双端队列)`
 
-###### Heap
+###### [Heap](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/Sort.java)
 
 `029-最小的K个数`
 
-###### Hash Table
+###### [Hash Table](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerStructure/HashAndGraph.java)
 
 `034-第一个只出现一次的字符`
 
-###### Graph(图)
+###### [Graph(图)](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerStructure/HashAndGraph.java)
 
 `065-矩阵中的路径(BFS)`
 
@@ -79,7 +79,7 @@
 
 ## 具体算法类题目
 
-###### 斐波那契数列
+###### [斐波那契数列](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/Fibonacci.java)
 
 `007-斐波拉契数列`
 
@@ -89,7 +89,7 @@
 
 `010-矩形覆盖`
 
-###### 搜索算法
+###### [搜索算法](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/Search.java)
 
 `001-二维数组查找`
 
@@ -97,23 +97,23 @@
 
 `037-数字在排序数组中出现的次数（二分查找）`
 
-###### 全排列
+###### [全排列](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/Sort.java)
 
 `027-字符串的排列`
 
-###### 动态规划`
+###### [动态规划](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/DPAndBit.java)
 
 `030-连续子数组的最大和`
 
 `052-正则表达式匹配(我用的暴力)`
 
-###### 回溯
+###### [回溯](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerStructure/HashAndGraph.java)
 
 `065-矩阵中的路径(BFS)`
 
 `066-机器人的运动范围(DFS)`
 
-###### 排序
+###### [排序](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/Sort.java)
 
 `035-数组中的逆序对(归并排序)`
 
@@ -121,7 +121,7 @@
 
 `029-最小的K个数(快速排序)`
 
-###### 位运算
+###### [位运算](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/DPAndBit.java)
 
 `011-二进制中1的个数`
 
@@ -129,7 +129,7 @@
 
 `040-数组中只出现一次的数字`
 
-###### 其他算法
+###### [其他算法](https://github.com/TonyDoen/followLeetCodeOrPoj/blob/master/hiLeetCode/src/main/java/me/meet/data/offerAlgorithm/Other.java)
 
 `002-替换空格`
 
