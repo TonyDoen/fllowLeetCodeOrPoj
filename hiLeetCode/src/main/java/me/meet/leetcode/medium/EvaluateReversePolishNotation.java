@@ -32,8 +32,7 @@ public final class EvaluateReversePolishNotation {
      * = (0 + 17) + 5
      * = 17 + 5
      * = 22
-     */
-    /**
+     *
      * 题意：计算逆波兰表达式
      * 逆波兰表达式就是把操作数放前面，把操作符后置的一种写法
      *
