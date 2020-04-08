@@ -20,6 +20,7 @@ public class AllPossibleFullBinaryTrees {
     }
 
     /**
+     * All Possible Full Binary Trees
      *
      * A full binary tree is a binary tree where each node has exactly 0 or 2 children.
      * Return a list of all possible full binary trees with Nnodes.

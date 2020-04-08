@@ -109,7 +109,7 @@ public final class BestTimeToBuyAndSellStock2 {
             sell1 = Math.max(sell1, curPrice + buy1);
             // 之前天先进行第一次交易后，在买入今天股票后的净利润
             buy2 = Math.max(buy2, sell1 - curPrice);
-            // 二次交易的收益(买入今天股票后的收益)
+            // 二次交易的收益(卖出今天股票后的收益)
             sell2 = Math.max(sell2, curPrice + buy2);
         }
         return sell2;
