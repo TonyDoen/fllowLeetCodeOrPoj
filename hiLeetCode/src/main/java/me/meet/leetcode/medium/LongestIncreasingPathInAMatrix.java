@@ -1,15 +1,9 @@
 package me.meet.leetcode.medium;
 
 public final class LongestIncreasingPathInAMatrix {
-//    static class Pair<K, V> {
-//        public K k;
-//        public V v;
-//
-//        Pair(K k, V v) {
-//            this.k = k;
-//            this.v = v;
-//        }
-//    }
+    private LongestIncreasingPathInAMatrix() {
+    }
+
     /**
      * Longest Increasing Path in a Matrix
      *
@@ -33,8 +27,8 @@ public final class LongestIncreasingPathInAMatrix {
      * ]
      * Return 4
      * The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
-     */
-    /**
+     *
+     *
      * 题意： 矩阵中的最长递增路径
      * 给我们一个二维数组，让我们求矩阵中最长的递增路径，规定我们只能上下左右行走，不能走斜线或者是超过了边界。
      *
