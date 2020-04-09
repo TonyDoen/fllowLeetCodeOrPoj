@@ -29,10 +29,10 @@ public final class New21Game {
      * 2. 1 <= W <= 10000
      * 3. Answers will be accepted as correct if they are within 10^-5 of the correct answer.
      * 4. The judging time limit has been reduced for this question.
-     */
-
-    /**
+     *
+     *
      *  新二十一点游戏
+     *
      */
     static double new21Game(int N, int K, int W) {
         if (K == 0 || N >= K + W) return 1.0;
