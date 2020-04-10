@@ -21,8 +21,8 @@ public final class SortList {
      * Example 2:
      * Input: -1->5->3->4->0
      * Output: -1->0->3->4->5
-     */
-    /**
+     *
+     *
      * 题意：给链表排序
      *
      * 思路：
