@@ -4,6 +4,8 @@ public final class SurroundedRegions {
     private SurroundedRegions() {
     }
     /**
+     * Surrounded Regions
+     *
      * Given a 2D board containing'X'and'O', capture all regions surrounded by'X'.
      * A region is captured by flipping all'O's into'X's in that surrounded region .
      * For example,
@@ -18,8 +20,7 @@ public final class SurroundedRegions {
      *     X X X X
      *     X O X X
      *
-     */
-    /**
+     *
      * 题意：所有与四条边相连的O都保留，其他O都变为X
      * 1、被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。
      * 2、任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'。
