@@ -100,5 +100,6 @@ public final class XOfKindInDeckOfCards {
 
         res = hasGroupsSizeX2(deck);
         System.out.println(res);
+
     }
 }
