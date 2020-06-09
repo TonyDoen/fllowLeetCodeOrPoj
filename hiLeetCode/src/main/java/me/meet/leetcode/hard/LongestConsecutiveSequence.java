@@ -26,7 +26,7 @@ public final class LongestConsecutiveSequence {
      * 3、返回最大的连续序列长度
      */
     static int countLongestConsecutive(int[] arr) {
-        if (null == arr) {
+        if (null == arr || arr.length < 1) {
             return 0;
         }
         if (arr.length < 2) {

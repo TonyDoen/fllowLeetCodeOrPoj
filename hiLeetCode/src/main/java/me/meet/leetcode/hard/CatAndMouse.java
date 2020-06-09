@@ -1,6 +1,7 @@
 package me.meet.leetcode.hard;
 
 public final class CatAndMouse {
+    private CatAndMouse() {}
 
     /**
      * Cat and Mouse
@@ -32,7 +33,6 @@ public final class CatAndMouse {
      * It is guaranteed that graph[1] is non-empty.
      * It is guaranteed that graph[2] contains a non-zero element.
      */
-
     /**
      * 题意：猫和老鼠
      * 思路：这道题是猫抓老鼠的问题，Tom and Jerry 都看过吧。这道题在无向图上模仿了猫抓老鼠的这一个过程，老鼠位于结点1，猫位于结点2，老鼠的目标是逃回老鼠洞结点0，猫的目标是在老鼠进洞之前抓住它。这里假设猫和老鼠都会选择最优的策略。若老鼠能成功逃回洞里，则返回1；若猫能成功抓到老鼠，则返回2；若谁也不能达到目标，则表示平局，返回0。其实这道题的本质还是一个无向图的遍历问题，只不过现在有两个物体在遍历，比一般的图遍历要复杂一些。假设图中有n个结点，不论是猫还是老鼠，当各自走完了n个结点时还没有分出胜负，则表示平局，若一人走一步，则最多有 2n 步。这样的话每一个状态实际上是由三个因素组成的：当前步数，老鼠所在结点，和猫所在结点。这里可以用动态规划 Dynamic Programming 来解，使用一个三维的 dp 数组，其中 dp[t][x][y] 表示当前步数为t，老鼠在结点x，猫在结点y时最终会返回的值，均初始化为 -1。要求的其实是起始状态 dp[0][1][2] 的返回值，但没法一下子求出，这个起始状态实际上是要通过其他状态转移过来，就比如说是求二叉树最大深度的递归函数，虽然对根结点调用递归函数的返回值就是最大深度，但在函数遇到叶结点之前都无法得知深度。先来看一些终止状态，首先当老鼠到达洞口的时候，此时老鼠赢，返回值是1，即所有 dp[?][0][?] 状态的返回值都是1。其次，当猫和老鼠处于同一个位置时，表示猫抓到老鼠了，此时猫赢，返回值是2，即所有 dp[?][y][y] 状态的返回值都是2。最后，当走完了 2n 步还没有分出胜负的话，则是平局，直接返回0即可。
@@ -104,9 +104,13 @@ public final class CatAndMouse {
         }
     }
 
-    public static void main(String[] args) {
+    private static void testCatAndMouseGame1() {
         int[][] graph = {{2, 5}, {3}, {0, 4, 5}, {1, 4, 5}, {2, 3}, {0, 2, 3}};
         int res = catAndMouseGame1(graph);
         System.out.println(res);
+    }
+
+    public static void main(String[] args) {
+        testCatAndMouseGame1();
     }
 }

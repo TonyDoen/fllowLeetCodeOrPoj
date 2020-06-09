@@ -151,7 +151,7 @@ public final class SuperEggDrop {
         return res;
     }
 
-    public static void main(String[] args) {
+    private static void testSuperEggDrop() {
         int k = 1, n = 2;
         int res = superEggDrop(k, n);
         int res2 = superEggDrop2(k, n);
@@ -160,5 +160,13 @@ public final class SuperEggDrop {
         int res5 = superEggDrop5(k, n);
         System.out.println(res);
         System.out.println(res2);
+        System.out.println(res3);
+        System.out.println(res4);
+        System.out.println(res5);
+
+    }
+
+    public static void main(String[] args) {
+        testSuperEggDrop();
     }
 }

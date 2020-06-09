@@ -30,7 +30,7 @@ public class DistinctSubsequencesII {
      * 题意：不同的子序列之二
      * 思路：这道题是之前那道 [Distinct Subsequences](http://www.cnblogs.com/grandyang/p/4294105.html) 的类似题目，这里只有一个字符串，让找出所有不同的子序列，如果字符串中没有重复字符，可以直接得到子序列的个数，但是这里由于重复字符的存在，就大大增加了难度。由于题目中提示了结果可能非常大，要对一个超大数取余，就相当于明确说了要用动态规划 Dynamic Programming 来做，下面就要来考虑 dp 数组的定义和状态转移方程的推导了。刚开始博主也是考虑用一个一维数组 dp，其中 dp[i] 表示以 S[i] 结尾的不同子序列的个数，就像 [这个帖子](https://leetcode.com/problems/distinct-subsequences-ii/discuss/192030/Java-DP-ON2-time-greater-ON-time-greater-O1-space) 中定义的一样，但是状态转移方程不好推导，那个帖子虽然代码可以跑通，但是解释的却不通，博主也纳闷这算是歪打正着么，希望哪位大神来解释一下。这里还是根据 [lee215 大神的帖子](https://leetcode.com/problems/distinct-subsequences-ii/discuss/192017/C%2B%2BJavaPython-4-lines-ON-Time-O1-Space) 来讲解吧。这里使用一个大小为 26 的一维数组 dp，其中 dp[i] 表示以字符 i+'a' 结尾的不同子序列的个数，因为题目中限定了只有小写字母，所以只有 26 个。以 aba 这个例子来分析一下，当遇到开头的a时，那么以a结尾的子序列只有一个，就是a，当遇到中间的b时，此时知道以b结尾的子序列有2个，分别是 b 和 ab，是怎么得来的呢，其实是空串和a后面分别加个b得来的，此时貌似得到的值和通过 sum(dp)+1 计算的结果相等，再来验证一下这个成不成立。当遇到末尾的a的时候，那么此时以a结尾的子序列就有4个，分别是 a，aa，ba，aba，是怎么得来的？在这个a加入之前，当前所有的子序列有，a，b，ab，如果再算上一个空串，[]，a，b，ab，则在其后面各加上一个b，就可以得到结果了，貌似也符合 sum(dp)+1 的规律，这其实也并不难理解，因为在当前不同序列的基础上，加上任何一个字符都会得到另一个不同的子序列，后面的加1是为了加上空串的情况，这个就是状态转移方程了，最终的结果是把 dp 数组累加起来取余后返回即可，
      */
-    static int distinctSubsequencesII(String src) {
+    static int distinctSubsequencesII(String src) { // error
         int n = src.length(), res = 0, m = (int) (1e9 + 7);
         Map<Character, Long> mp = new HashMap<>();
         long[] a = new long[n], b = new long[n];
