@@ -1,5 +1,6 @@
 package me.meet.leetcode.hard;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +55,87 @@ public class DistinctSubsequencesII {
         System.out.println(res);
     }
 
+    static int dis2(String src) {
+//        int MOD = 1_000_000_007;
+        int mod = 1000000007;
+        int[][] dp = new int[src.length()][26];
+        dp[0][src.charAt(0) - 'a'] = 1;
+        for (int i = 1; i < src.length(); i++) {
+            int temp = 0;
+            for (int j = 0; j < 26; j++) {
+                dp[i][j] = dp[i - 1][j];
+                temp = (temp + dp[i - 1][j]);
+            }
+            temp++;
+            dp[i][src.charAt(i) - 'a'] = temp;
+        }
+        int res = 0;
+        for (int i = 0; i < 26; i++) {
+            res = (res + dp[src.length() - 1][i]);
+        }
+        return res;
+    }
+
+    /**
+     * from collections import defaultdict
+     * class Solution:
+     *     def distinctSubseqII(self, S: str) -> int:
+     *         dp = defaultdict(int)
+     *
+     *         res = 0
+     *         for c in S:
+     *             res, dp[c] = 2 * res - dp[c] + 1, res + 1
+     *
+     *         return res % (10 ** 9 + 7)
+     *
+     * 作者：iberryful
+     * 链接：https://leetcode-cn.com/problems/distinct-subsequences-ii/solution/san-chong-dpfang-fa-shi-jian-fu-za-du-cong-on2dao-/
+     */
+
+    static int dis4(String src) {
+        int result = 1, mod = 1000000007;
+        int[] dp = new int[26];
+        for (int length = src.length(), i = 0; i < length; i++) {
+            int idx = src.charAt(i) - 'a';
+
+            int before = dp[idx];
+            dp[idx] = result;
+            result = (2 * result - before);
+
+            // 溢出处理
+            result = (result < 0 ? result + mod : result % mod);
+        }
+        return result - 1;
+    }
+
+    static int dis3(String src) {
+        BigInteger result = BigInteger.ZERO, one = BigInteger.ONE, two = BigInteger.valueOf(2);
+        // 1. S contains only lowercase letters.
+        BigInteger[] dp = new BigInteger[26];
+        for (int i = 0; i < 26; i++) {
+            dp[i] = BigInteger.ZERO;
+        }
+
+        for (int length = src.length(), i = 0; i < length; i++) {
+            int idx = src.charAt(i) - 'a';
+
+            BigInteger before = dp[idx];
+            dp[idx] = result.add(one);
+            result = result.multiply(two).add(before.negate()).add(one);
+        }
+
+        return result.mod(BigInteger.valueOf(1000000007)).intValue();
+    }
+
+
+
     public static void main(String[] args) {
-        testDistinctSubsequencesII();
+//        testDistinctSubsequencesII();
+//        dis3("abc");
+        String src = "zchmliaqdgvwncfatcfivphddpzjkgyygueikthqzyeeiebczqbqhdytkoawkehkbizdmcnilcjjlpoeoqqoqpswtqdpvszfaksn";
+        int res = dis3(src);
+        int res2 = dis4(src);
+        System.out.println(res);
+        System.out.println(res2);
     }
 }
