@@ -1,7 +1,8 @@
 package me.meet.leetcode.medium;
 
 public final class LongestMountainInArray {
-    private LongestMountainInArray() {}
+    private LongestMountainInArray() {
+    }
 
     /**
      * Let's call any (contiguous) subarray B (of A) a mountain if the following properties hold:

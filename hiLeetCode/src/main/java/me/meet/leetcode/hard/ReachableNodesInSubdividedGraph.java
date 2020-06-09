@@ -73,13 +73,18 @@ public final class ReachableNodesInSubdividedGraph {
         return res;
     }
 
-    static class Pair<A, B> {
+    static class Pair<A, B> implements Comparable<Pair<A, B>>{
         public A a;
         public B b;
 
         public Pair(A a, B b) {
             this.a = a;
             this.b = b;
+        }
+
+        @Override
+        public int compareTo(Pair<A, B> abPair) {
+            return this.hashCode() - abPair.hashCode();
         }
     }
 

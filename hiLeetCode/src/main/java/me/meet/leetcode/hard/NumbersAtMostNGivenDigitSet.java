@@ -66,7 +66,29 @@ public final class NumbersAtMostNGivenDigitSet {
         return res + 1;
     }
 
-    public static void main(String[] args) {
+    static int atMostNGivenDigitSet(String[] d, int n) {
+        String nStr = ""+n;
+        int res = 0, dSize = d.length, length = nStr.length();
+        for (int i = 1; i < length; i++) {
+            res += Math.pow(dSize, i);
+        }
+        for (int i = 0; i < length; i++) {
+            boolean hasSameNum = false;
+            for (String s : d) {
+                if (s.charAt(0) < nStr.charAt(i)) {
+                    res += Math.pow(dSize, length - 1 - i);
+                } else if (s.charAt(0) == nStr.charAt(i)) {
+                    hasSameNum = true;
+                }
+            }
+            if (!hasSameNum) {
+                return res;
+            }
+        }
+        return res + 1;
+    }
+
+    private static void testAtMostNGivenDigitSet() {
         // D={"1","3","5","7"}，N=365
         Set<String> d = new HashSet<>();
         d.add("1");d.add("3");d.add("5");d.add("7");
@@ -74,5 +96,13 @@ public final class NumbersAtMostNGivenDigitSet {
 
         int res = atMostNGivenDigitSet(d, n);
         System.out.println(res);
+
+        String[] dd = {"1","3","5","7"};
+        res = atMostNGivenDigitSet(dd, n);
+        System.out.println(res);
+    }
+
+    public static void main(String[] args) {
+        testAtMostNGivenDigitSet();
     }
 }

@@ -30,9 +30,15 @@ public final class MedianOfTwoSortedArrays {
         return (findKth(nums1, 0, nums2, 0, left) + findKth(nums1, 0, nums2, 0, right)) / 2.0;
     }
     private static int findKth(int[] nums1, int i, int[] nums2, int j, int k) {
-        if (i >= nums1.length) return nums2[j + k - 1];
-        if (j >= nums2.length) return nums1[i + k - 1];
-        if (k == 1) return Math.min(nums1[i], nums2[j]);
+        if (i >= nums1.length) {
+            return nums2[j + k - 1];
+        }
+        if (j >= nums2.length) {
+            return nums1[i + k - 1];
+        }
+        if (k == 1) {
+            return Math.min(nums1[i], nums2[j]);
+        }
         int midVal1 = (i + k / 2 - 1 < nums1.length) ? nums1[i + k / 2 - 1] : Integer.MAX_VALUE;
         int midVal2 = (j + k / 2 - 1 < nums2.length) ? nums2[j + k / 2 - 1] : Integer.MAX_VALUE;
         if (midVal1 < midVal2) {
@@ -42,13 +48,14 @@ public final class MedianOfTwoSortedArrays {
         }
     }
 
-    public static void main(String[] args) {
-//        int[] nums1 = new int[]{1, 3};
-//        int[] nums2 = new int[]{2};
-
+    private static void testFindMedianSortedArrays() {
         int[] nums1 = new int[]{1, 2};
         int[] nums2 = new int[]{3, 4};
         double res = findMedianSortedArrays(nums1, nums2);
         System.out.println(res);
+    }
+
+    public static void main(String[] args) {
+        testFindMedianSortedArrays();
     }
 }

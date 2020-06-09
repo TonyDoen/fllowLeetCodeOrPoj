@@ -46,6 +46,10 @@ public final class LongestIncreasingPathInAMatrix {
      * 在以一个位置为起点用DFS搜索时，对其四个相邻位置进行判断，如果相邻位置的值大于上一个位置，则对相邻位置继续调用递归，并更新一个最大值，搜素完成后返回即可，
      */
     static int longestIncreasingPath(int[][] matrix) {
+        if (null == matrix || matrix.length < 1) {
+            return 0;
+        }
+
         int res = 1, m = matrix.length, n = matrix[0].length;
         int[][] dp = new int[m][n];
         for (int i = 0; i < m; i++) {

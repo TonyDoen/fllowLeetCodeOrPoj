@@ -66,9 +66,6 @@ public final class KeysAndRooms {
     }
 
 
-    /**
-     * 居然递归是最快的。。。。
-     */
     static boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Set<Integer> opened = new HashSet<>();
         Queue<Integer> queue = new LinkedList<>();

@@ -53,10 +53,7 @@ public final class MaximumFrequencyStack {
         private HashMap<Integer, Integer> freq = new HashMap<>();
         private HashMap<Integer, LinkedList<Integer>> mp = new HashMap<>();
 
-        void push(Integer x) {
-            if (null == x) {
-                return;
-            }
+        void push(int x) {
             Integer f = freq.get(x);
             f = (null == f ? 0 : f);
             mxFreq = Math.max(mxFreq, ++f);
@@ -65,10 +62,10 @@ public final class MaximumFrequencyStack {
             mp.computeIfAbsent(f, o -> new LinkedList<>()).add(x);
         }
 
-        Integer pop() {
+        int pop() {
             LinkedList<Integer> mxL = mp.get(mxFreq);
             if (null == mxL) {
-                return null;
+                return -1;
             }
             Integer x = mxL.pollLast();
 
@@ -79,7 +76,6 @@ public final class MaximumFrequencyStack {
             if (null == mxL2 || mxL2.isEmpty()) {
                 mxFreq--;
             }
-
 
             return x;
         }

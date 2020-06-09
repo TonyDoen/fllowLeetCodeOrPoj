@@ -161,6 +161,17 @@ public final class KthSymbolInGrammar {
         System.out.println(res);
     }
 
+    /**
+     * 经过观察发现这道题的解其实就是对K-1进行了一个奇偶校验，因此连N这个参数都用不着，O(1)时间空间复杂度求解
+     */
+    public int kthGrammar3(int N, int k) {
+        k -= 1;
+        k ^= k >> 1;
+        k ^= k >> 2;
+        k = (k & 0x11111111) * 0x11111111;
+        return (k >> 28) & 1;
+    }
+
     public static void main(String[] args) {
         testKthGrammar();
         testKthGrammar2();

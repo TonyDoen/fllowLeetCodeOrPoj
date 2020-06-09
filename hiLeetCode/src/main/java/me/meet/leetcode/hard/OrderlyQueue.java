@@ -1,9 +1,6 @@
 package me.meet.leetcode.hard;
 
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public final class OrderlyQueue {
     private OrderlyQueue(){}
@@ -62,9 +59,13 @@ public final class OrderlyQueue {
         return res;
     }
 
-    public static void main(String[] args) {
+    private static void testOrderlyQueue() {
         String src = "cba";
         String res = orderlyQueue(src, 1);
         System.out.println(res);
+    }
+
+    public static void main(String[] args) {
+        testOrderlyQueue();
     }
 }
