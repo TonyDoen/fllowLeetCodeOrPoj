@@ -204,7 +204,7 @@ public class OfferTrickCode1 {
     }
 
     private static void testNSeat() {
-        int seat = nSeat(Integer.MAX_VALUE);
+        int seat = nSeat(Integer.MAX_VALUE); // 2147483647 => 2147483647
         System.out.println(seat);
     }
 
