@@ -1,8 +1,5 @@
 package me.meet.data;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-
 public class OfferTrickCode1 {
     /**
      * Implement int sqrt(int x). Compute and return the square root of x.
@@ -166,6 +163,15 @@ public class OfferTrickCode1 {
         return Math.sqrt(2 * Math.PI * n) * Math.pow((n / Math.E), n);
     }
 
+    private static void testStirlingF() {
+        int n = 25;
+        double res = stirlingF(n);
+        System.out.println(res);
+
+        long res2 = nF(n);
+        System.out.println(res2);
+    }
+
     /**
      * http://acm.hdu.edu.cn/showproblem.php?pid=1018
      * 求 N! 的位数
@@ -185,34 +191,27 @@ public class OfferTrickCode1 {
      * log10(N!) = log10(1) + log10(2) + log10(3) + ... + log10(N)
      *
      */
-//    static BigDecimal nSeat(int n) {
-//        if (n < 1) {
-//            throw new IllegalArgumentException();
-//        }
-//        BigDecimal seat = BigDecimal.ZERO;
-//        for (int i = 0; i < n; i++) {
-//            seat = seat.add(BigDecimal.valueOf(Math.log10(i)));
-//        }
-//        return seat.add(BigDecimal.ONE);
-//    }
+    static int nSeat(int n) {
+        double res = 0;
+        for (int i = 1; i <= n && i > 0; i++) {
+            double lgi = Math.log10(i);
+            if (lgi < 0) {
+                throw new IllegalArgumentException();
+            }
+            res += lgi;
+        }
+        return (int) (res + 1);
+    }
 
-    private static void testStirlingF() {
-        int n = 25;
-        double res = stirlingF(n);
-        System.out.println(res);
-
-        long res2 = nF(n);
-        System.out.println(res2);
-
-//        n = 10000000;
-//        System.out.println(n);
-//        BigDecimal res3 = nSeat(n);
-//        System.out.println(res3);
+    private static void testNSeat() {
+        int seat = nSeat(Integer.MAX_VALUE);
+        System.out.println(seat);
     }
 
     public static void main(String[] args) {
         testSqrt1();
         testPow();
         testStirlingF();
+        testNSeat();
     }
 }
