@@ -2,6 +2,17 @@ package me.meet.labuladong.common;
 
 import java.util.LinkedList;
 
+/**
+ * 模板：
+ *
+ * void traverse(TreeNode root) {
+ *     // 前序遍历
+ *     traverse(root.left)
+ *     // 中序遍历
+ *     traverse(root.right)
+ *     // 后序遍历
+ * }
+ */
 public class TreeNode {
     private Integer val;
     private TreeNode left;
@@ -12,6 +23,10 @@ public class TreeNode {
 
     public void setRight(TreeNode right) {
         this.right = right;
+    }
+
+    public void setVal(Integer val) {
+        this.val = val;
     }
 
     private TreeNode right;
