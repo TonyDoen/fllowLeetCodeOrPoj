@@ -30,7 +30,10 @@ public final class LC124 {
          *   /  \    /  \
          * 2     4  5   -8
          */
-        int res = oneSideMax(TreeNode.prepareTree1());
+        TreeNode src = TreeNode.prepareTree1();
+        src.println();
+
+        int res = oneSideMax(src);
         System.out.println(res);
     }
 }

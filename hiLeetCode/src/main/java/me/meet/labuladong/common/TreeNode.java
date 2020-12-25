@@ -1,6 +1,6 @@
 package me.meet.labuladong.common;
 
-import me.meet.data.offerStructure.Tree;
+import java.util.LinkedList;
 
 public class TreeNode {
     private Integer val;
@@ -56,18 +56,42 @@ public class TreeNode {
         return _1;
     }
 
-    public void printTreeNode() {
-        printTreeNode(this);
+    public int maxLevel() {
+        return maxLevel(this);
     }
 
-    public static void printTreeNode(TreeNode node) {
+    public static int maxLevel(TreeNode node) {
         if (null == node) {
-            return;
+            return 0;
         }
-//        System.out.println(String.format("{root:%s; left:%s; right:%s}", node.val, node.left.val));
-        System.out.println(node.val); // 前序遍历
-        printTreeNode(node.left);
-        printTreeNode(node.right);
 
+        return Math.max(maxLevel(node.left), maxLevel(node.right)) + 1;
+    }
+
+    public void println() {
+        println(this, maxLevel(this));
+    }
+
+    public static void println(TreeNode node, int maxLevel) {
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+        for (int depth = 0; depth < maxLevel; depth++) {
+            int size = queue.size();
+            System.out.printf("binary tree level %d : ", depth);
+            for (int i = 0; i < size; i++) {
+                TreeNode cur = queue.poll();
+
+                if (null == cur) {
+                    System.out.print("nil ");
+                    queue.offer(null);
+                    queue.offer(null);
+                } else {
+                    System.out.print(cur.val + " ");
+                    queue.offer(cur.left);
+                    queue.offer(cur.right);
+                }
+            }
+            System.out.println();
+        }
     }
 }
