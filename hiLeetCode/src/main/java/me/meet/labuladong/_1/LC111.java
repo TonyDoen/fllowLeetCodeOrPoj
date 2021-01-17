@@ -95,7 +95,7 @@ public final class LC111 {
         node.println();
         
         int depth = minDepth(node);
-        System.out.println(depth);
+        System.out.println("MinDepth: "+depth);
     }
 
     public static void main(String[] args) {
