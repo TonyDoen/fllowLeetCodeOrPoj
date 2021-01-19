@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-public final class LC752 {
-    private LC752() {
+public final class LC0752 {
+    private LC0752() {
     }
 
     /**

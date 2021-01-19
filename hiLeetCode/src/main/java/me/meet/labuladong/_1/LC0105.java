@@ -5,8 +5,8 @@ import me.meet.labuladong.common.TreeNode;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class LC105 {
-    private LC105() {
+public final class LC0105 {
+    private LC0105() {
     }
 
     /**

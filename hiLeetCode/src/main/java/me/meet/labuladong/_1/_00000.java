@@ -1,7 +1,7 @@
 package me.meet.labuladong._1;
 
-public class _0000 {
-    private _0000() {
+public class _00000 {
+    private _00000() {
     }
 
     /**

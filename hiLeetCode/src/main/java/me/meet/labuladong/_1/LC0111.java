@@ -42,8 +42,8 @@ import java.util.Queue;
  * }
  */
 
-public final class LC111 {
-    private LC111() {
+public final class LC0111 {
+    private LC0111() {
     }
 
     /**

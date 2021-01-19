@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-public final class LC99 {
-    private LC99() {
+public final class LC0099 {
+    private LC0099() {
     }
 
     /**

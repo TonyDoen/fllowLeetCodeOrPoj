@@ -2,8 +2,8 @@ package me.meet.labuladong._1;
 
 import me.meet.labuladong.common.TreeNode;
 
-public final class LC124 {
-    private LC124() {
+public final class LC0124 {
+    private LC0124() {
     }
 
     /**
