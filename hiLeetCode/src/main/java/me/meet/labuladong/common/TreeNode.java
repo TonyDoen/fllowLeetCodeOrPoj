@@ -87,6 +87,22 @@ public class TreeNode {
         return _3;
     }
 
+    public static TreeNode prepareTree3() {
+        /**         3
+         *        /  \
+         *      4      5
+         *    /  \    /  \
+         *   1   3  null  1
+         */
+        TreeNode _1 = new TreeNode(1);
+        TreeNode _3 = new TreeNode(3);
+        TreeNode _1a = new TreeNode(1);
+        TreeNode _4 = new TreeNode(4, _1, _3);
+        TreeNode _5 = new TreeNode(5, null, _1a);
+        TreeNode _3a = new TreeNode(3, _4, _5);
+        return _3a;
+    }
+
     public int maxLevel() {
         return maxLevel(this);
     }
