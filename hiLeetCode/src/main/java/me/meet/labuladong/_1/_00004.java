@@ -2,7 +2,6 @@ package me.meet.labuladong._1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 public final class _00004 {
@@ -314,9 +313,9 @@ public final class _00004 {
         if (2 == n) {
             // two sum 是 base case.
             // 双指针操作
-            int lo = start, hi = length-1;
+            int lo = start, hi = length - 1;
             while (lo < hi) {
-                int sum = nums[lo]+nums[hi], left = nums[lo], right = nums[hi];
+                int sum = nums[lo] + nums[hi], left = nums[lo], right = nums[hi];
                 if (sum < target) {
                     while (lo < hi && nums[lo] == left) {
                         lo++;
@@ -342,7 +341,7 @@ public final class _00004 {
         } else {
             // n > 2 时, 递归计算 n-1 sum 的结果
             for (int i = start; i < length; i++) {
-                List<List<Integer>> tmp = nSumStartTarget(nums, n-1, i+1, target-nums[i]);
+                List<List<Integer>> tmp = nSumStartTarget(nums, n - 1, i + 1, target - nums[i]);
                 for (List<Integer> t : tmp) {
                     // n-1 sum 加上 nums[i] 就是 n sum
                     t.add(nums[i]);
@@ -350,7 +349,7 @@ public final class _00004 {
                 }
 
                 // 跳过数字重复的情况，
-                while (i < length-1 && nums[i] == nums[i+1]) {
+                while (i < length - 1 && nums[i] == nums[i + 1]) {
                     i++;
                 }
             }
@@ -368,7 +367,7 @@ public final class _00004 {
         int n1 = 7;
         int target1 = 0;
         List<List<Integer>> res1 = nSumTarget(nums1, n1, target1);
-        System.out.println(res1);
+        System.out.println(n1 + " tuple" + res1);
     }
 
     public static void main(String[] args) {
