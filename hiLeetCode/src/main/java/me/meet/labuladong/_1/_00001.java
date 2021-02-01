@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class _00001 {
+public final class _00001 {
     private _00001() {
     }
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class _00002 {
+public final class _00002 {
     private _00002() {
     }
 
