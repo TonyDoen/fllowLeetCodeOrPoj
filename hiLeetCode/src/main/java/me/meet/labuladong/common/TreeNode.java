@@ -16,6 +16,16 @@ import java.util.LinkedList;
 public class TreeNode {
     private Integer val;
     private TreeNode left;
+    private TreeNode right;
+    private TreeNode next;
+
+    public TreeNode getNext() {
+        return next;
+    }
+
+    public void setNext(TreeNode next) {
+        this.next = next;
+    }
 
     public void setLeft(TreeNode left) {
         this.left = left;
@@ -28,8 +38,6 @@ public class TreeNode {
     public void setVal(Integer val) {
         this.val = val;
     }
-
-    private TreeNode right;
 
     public Integer getVal() {
         return val;
