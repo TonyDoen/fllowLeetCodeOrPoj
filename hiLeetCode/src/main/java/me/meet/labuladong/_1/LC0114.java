@@ -66,4 +66,14 @@ public final class LC0114 {
         t.setRight(right);
     }
 
+    private static void testFlatten() {
+        TreeNode node = TreeNode.prepareTree4();
+        flatten(node);
+        node.println();
+    }
+
+    public static void main(String[] args) {
+        testFlatten();
+    }
+
 }
