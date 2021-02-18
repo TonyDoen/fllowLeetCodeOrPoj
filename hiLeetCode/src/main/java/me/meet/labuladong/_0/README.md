@@ -42,7 +42,7 @@ slogan: 偷懒掉的都要补回来
 
 [手把手带你刷二叉树（第一期）](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487126&idx=1&sn=4de13e66397bc35970963c5a1330ce18&chksm=9bd7f09eaca0798853c41fba05ad5fa958b31054eba18b69c785ae92f4bd8e4cc7a2179d7838&scene=21#wechat_redirect)
 --
-[LC0116](./LC0116.java); [LC0114](./LC0114.java); [LC0099](./LC0099.java); [LC0105](./LC0105.java); [LC0124](./LC0124.java); [LC0226](./LC0226.java);
+[LC0116](./LC0116.java); [LC0114](./LC0114.java); [LC0099](./LC0099.java); [LC0105](./LC0105.java); [LC0124](./LC0124.java); [LC0226](./LC0226.java); [TreeNode](../common/TreeNode.java)
 
 [经典动态规划：子集背包问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485103&idx=1&sn=8a9752e18ed528e5c18d973dcd134260&chksm=9bd7f8a7aca071b14c736a30ef7b23b80914c676414b01f8269808ef28da48eb13e90a432fff&scene=21#wechat_redirect)
 --
