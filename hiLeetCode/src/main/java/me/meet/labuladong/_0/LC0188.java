@@ -1,4 +1,4 @@
-package me.meet.labuladong._1;
+package me.meet.labuladong._0;
 
 public final class LC0188 {
     private LC0188() {
