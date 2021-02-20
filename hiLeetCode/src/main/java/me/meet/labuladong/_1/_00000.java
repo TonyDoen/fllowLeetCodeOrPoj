@@ -215,10 +215,10 @@ public final class _00000 {
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1];           // skip
+                    dp[i][j] = dp[i - 1][j - 1];             // skip
                 } else {
-                    dp[i][j] = min(dp[i - 1][j] + 1, // insert
-                        dp[i][j - 1] + 1,                  // delete
+                    dp[i][j] = min(dp[i - 1][j] + 1,   // insert
+                        dp[i][j - 1] + 1,                    // delete
                         dp[i - 1][j - 1] + 1                 // replace
                     );
                 }
@@ -262,7 +262,37 @@ public final class _00000 {
      *
      *
      */
-
+// error
+//    static int minDistanceCompressDpTable(String s1, String s2) {
+//        int m = s1.length(), n = s2.length();
+//
+//        int[] dp = new int[n+1];
+//
+//        // base case
+//        for (int i = 1; i <= n; i++) {
+//            dp[i] = i;
+//        }
+//        // 自底向上求解
+//        for (int i = 1; i <= m; i++) {
+//            int pre = 0;
+//            for (int j = 1; j <= n; j++) {
+//                int tmp = dp[j];
+//                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+//                    dp[j] = dp[j-1];                // skip
+//                    // dp[i][j] = dp[i - 1][j - 1];
+//                } else {
+//                    dp[j] = min(pre + 1,      // insert;  dp[i - 1][j] + 1
+//                        tmp + 1,                    // delete;  dp[i][j - 1] + 1
+//                        dp[j-1] + 1                 // replace; dp[i - 1][j - 1] + 1
+//                    );
+//                }
+//
+//                pre = tmp;
+//            }
+//        }
+//        // 存储整个 s1, s2 的最小编辑距离
+//        return dp[n];
+//    }
 
     private static void testMinDistance() {
         String s1 = "rad", s2 = "apple";
@@ -271,6 +301,9 @@ public final class _00000 {
 
         res = minDistanceDpTable(s1, s2);
         System.out.println(res);
+
+//        res = minDistanceCompressDpTable(s2, s1);
+//        System.out.println(res);
     }
 
     public static void main(String[] args) {
