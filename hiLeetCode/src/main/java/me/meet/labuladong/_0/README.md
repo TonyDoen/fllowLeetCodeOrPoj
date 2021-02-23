@@ -19,7 +19,7 @@ slogan: 偷懒掉的都要补回来
 
 [我写了首诗，把滑动窗口算法算法变成了默写题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485141&idx=1&sn=0e4583ad935e76e9a3f6793792e60734&chksm=9bd7f8ddaca071cbb7570b2433290e5e2628d20473022a5517271de6d6e50783961bebc3dd3b&scene=21#wechat_redirect)
 
-[`LC0076`](./LC0076.java); [`LC0567`](./LC0567.java); [`LC0438`](./LC0438.java); [`LC0003`](./LC0003.java);
+[`LC0076`](./LC0076.java); [`LC0567`](./LC0567.java); [`LC0438`](./LC0438.java); [`LC0003`](./LC0003.java); [`_00003`](./_00003.java); 
 
 [一个方法团灭 LeetCode 股票买卖问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484508&idx=1&sn=42cae6e7c5ccab1f156a83ea65b00b78&chksm=9bd7fa54aca07342d12ae149dac3dfa76dc42bcdd55df2c71e78f92dedbbcbdb36dec56ac13b&scene=21#wechat_redirect)
 
