@@ -23,5 +23,13 @@ slogan: 偷懒掉的都要补回来
 
 [`_00001`](./_00001.java); [`_00002`](./_00002.java); 
 
+[动态规划设计：最大子数组](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485355&idx=1&sn=17a59704a657b4880dffb54c40ad730e&chksm=9bd7f9a3aca070b53c3f74c9d0a1074ae1e615699fd3b977b8134d486106e62fb28cdf59cb52&scene=21#wechat_redirect)
+
+[`LC0053`](./LC0053.java); 
+
+[经典动态规划：最长公共子序列](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487860&idx=1&sn=f5759ae4f22f966db8ed5a85821edd34&chksm=9bd7ef7caca0666a628fe838dee6d5da44b05eadf01fd7e87fcef813430c8e6dc3eb3c23e15f&scene=21#wechat_redirect)
+
+[`LC1143`](./LC1143.java); 
+
 
 
