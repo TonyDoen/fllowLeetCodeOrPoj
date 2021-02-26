@@ -121,7 +121,7 @@ public final class LC1143 {
      * 另外，自底向上的解法可以通过我们前文讲过的 动态规划状态压缩技巧 来进行优化，把空间复杂度压缩为 O(N)
      *
      */
-    int longestCommonSubsequence2(String s1, String s2) {
+    static int longestCommonSubsequence2(String s1, String s2) {
         int m = s1.length(), n = s2.length();
         int[][] dp = new int[m + 1][n + 1];
         // 定义：s1[0..i-1] 和 s2[0..j-1] 的 lcs 长度为 dp[i][j]
@@ -149,7 +149,7 @@ public final class LC1143 {
         int res = longestCommonSubsequence1(s1, s2);
         System.out.println(res);
 
-        res = longestCommonSubsequence1(s1, s2);
+        res = longestCommonSubsequence2(s1, s2);
         System.out.println(res);
     }
 
