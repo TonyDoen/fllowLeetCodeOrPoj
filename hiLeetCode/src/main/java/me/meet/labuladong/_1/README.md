@@ -29,7 +29,11 @@ slogan: 偷懒掉的都要补回来
 
 [经典动态规划：最长公共子序列](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487860&idx=1&sn=f5759ae4f22f966db8ed5a85821edd34&chksm=9bd7ef7caca0666a628fe838dee6d5da44b05eadf01fd7e87fcef813430c8e6dc3eb3c23e15f&scene=21#wechat_redirect)
 
-[`LC1143`](./LC1143.java); 
+[`LC1143`](./LC1143.java); [`LC0583`](./LC0583.java); 
+
+[动态规划之子序列问题解题模板](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484666&idx=1&sn=e3305be9513eaa16f7f1568c0892a468&chksm=9bd7faf2aca073e4f08332a706b7c10af877fee3993aac4dae86d05783d3d0df31844287104e&scene=21#wechat_redirect)
+
+
 
 
 
