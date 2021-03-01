@@ -39,7 +39,13 @@ slogan: 偷懒掉的都要补回来
 
 [`LC0416`](../_0/LC0416.java); 
 
+[经典动态规划：完全背包问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485124&idx=1&sn=52068c8000b90a7a972dbd04658d79b7&chksm=9bd7f8ccaca071da66d3c9e567ab49b27c711db154c2f297f55fcd7c3c1156afa37b0ad60555&scene=21#wechat_redirect)
 
+[`LC0518`](../_0/LC0518.java); 
+
+[经典动态规划：0-1 背包问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485064&idx=1&sn=550705eb67f5e71487c8b218382919d6&chksm=9bd7f880aca071962a5a17d0f85d979d6f0c5a5ce32c84b8fee88e36d451f9ccb3bb47b88f78&scene=21#wechat_redirect)
+
+[`LC0416`](../_0/LC0416.java); 
 
 
 

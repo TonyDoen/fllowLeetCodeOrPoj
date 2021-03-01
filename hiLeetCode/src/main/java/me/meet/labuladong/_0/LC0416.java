@@ -250,7 +250,10 @@ public final class LC0416 {
     }
 
     public static void main(String[] args) {
+        // 经典动态规划：子集背包问题
         testCanPartition();
+        // 经典动态规划：0-1 背包问题
         testKnapsack();
+        // 经典动态规划：完全背包问题
     }
 }
