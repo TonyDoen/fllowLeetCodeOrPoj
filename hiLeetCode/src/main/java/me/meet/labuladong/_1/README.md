@@ -47,6 +47,11 @@ slogan: 偷懒掉的都要补回来
 
 [`LC0416`](../_0/LC0416.java); 
 
+#### 1.4 贪心类型问题
+
+[贪心算法之区间调度问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484493&idx=1&sn=1615b8a875b770f25875dab54b7f0f6f&chksm=9bd7fa45aca07353a347b7267aaab78b81502cf7eb60d0510ca9109d3b9c0a1d9dda10d99f50&scene=21#wechat_redirect)
+
+[`_00003`](./_00003.java); 
 
 
 
