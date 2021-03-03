@@ -53,5 +53,10 @@ slogan: 偷懒掉的都要补回来
 
 [`_00003`](./_00003.java); 
 
+#### 1.5 其他经典问题
+
+[经典动态规划：正则表达式](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484513&idx=1&sn=e5fc3cce76c1b916195e1793122c28b8&chksm=9bd7fa69aca0737fe704ea5c6da28f47b9e3f0961df2eb40ef93a7d507ace8def1a18d013515&scene=21#wechat_redirect)
+
+[`_00004`](./_00004.java); 
 
 
