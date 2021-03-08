@@ -61,4 +61,7 @@ slogan: 偷懒掉的都要补回来
 
 [经典动态规划：高楼扔鸡蛋](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484675&idx=1&sn=4a4ac1c0f1279530b42fedacc6cca6e6&chksm=9bd7fb0baca0721dda1eaa1d00b9a520672dc9d5c3be762eeca869be35d7ce232922ba8e928b&scene=21#wechat_redirect)
 
+[`_00004`](./_00004.java); 
+
+
 
