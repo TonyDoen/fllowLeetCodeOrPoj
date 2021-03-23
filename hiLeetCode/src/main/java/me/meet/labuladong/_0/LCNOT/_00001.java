@@ -1,4 +1,4 @@
-package me.meet.labuladong._0;
+package me.meet.labuladong._0.LCNOT;
 
 import me.meet.labuladong.common.TreeNode;
 

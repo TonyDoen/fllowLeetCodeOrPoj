@@ -17,11 +17,11 @@ slogan: 偷懒掉的都要补回来
 
 [经典动态规划：编辑距离](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484731&idx=3&sn=aa642cbf670feee73e20428775dff0b5&chksm=9bd7fb33aca0722568ab71ead8d23e3a9422515800f0587ff7c6ef93ad45b91b9e9920d8728e&scene=21#wechat_redirect)
 
-[`_00000`](./_00000.java); 
+[`_00000`](./LCNOT/_00000.java); 
 
 [信封嵌套问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484494&idx=1&sn=0e90d7fbf812fd1f4c408b5cc5fdf8c6&chksm=9bd7fa46aca07350f626e2365d9f71545aa304725b7122b5a44bcfd90cf0506c9036201f3b38&scene=21#wechat_redirect)
 
-[`_00001`](./_00001.java); [`_00002`](./_00002.java); 
+[`_00001`](./LCNOT/_00001.java); [`_00002`](./LCNOT/_00002.java); 
 
 [动态规划设计：最大子数组](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485355&idx=1&sn=17a59704a657b4880dffb54c40ad730e&chksm=9bd7f9a3aca070b53c3f74c9d0a1074ae1e615699fd3b977b8134d486106e62fb28cdf59cb52&scene=21#wechat_redirect)
 
@@ -51,17 +51,17 @@ slogan: 偷懒掉的都要补回来
 
 [贪心算法之区间调度问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484493&idx=1&sn=1615b8a875b770f25875dab54b7f0f6f&chksm=9bd7fa45aca07353a347b7267aaab78b81502cf7eb60d0510ca9109d3b9c0a1d9dda10d99f50&scene=21#wechat_redirect)
 
-[`_00003`](./_00003.java); 
+[`_00003`](./LCNOT/_00003.java); 
 
 #### 1.5 其他经典问题
 
 [经典动态规划：正则表达式](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484513&idx=1&sn=e5fc3cce76c1b916195e1793122c28b8&chksm=9bd7fa69aca0737fe704ea5c6da28f47b9e3f0961df2eb40ef93a7d507ace8def1a18d013515&scene=21#wechat_redirect)
 
-[`_00004`](./_00004.java); 
+[`_00004`](./LCNOT/_00004.java); 
 
 [经典动态规划：高楼扔鸡蛋](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484675&idx=1&sn=4a4ac1c0f1279530b42fedacc6cca6e6&chksm=9bd7fb0baca0721dda1eaa1d00b9a520672dc9d5c3be762eeca869be35d7ce232922ba8e928b&scene=21#wechat_redirect)
 
-[`_00004`](./_00004.java); 
+[`_00004`](./LCNOT/_00004.java); 
 
 
 

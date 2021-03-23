@@ -15,11 +15,11 @@ slogan: 偷懒掉的都要补回来
 
 [我写了首诗，让你闭着眼睛也能写对二分搜索](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485044&idx=1&sn=e6b95782141c17abe206bfe2323a4226&chksm=9bd7f87caca0716aa5add0ddddce0bfe06f1f878aafb35113644ebf0cf0bfe51659da1c1b733&scene=21#wechat_redirect)
 
-[`_00000`](./_00000.java); 
+[`_00000`](./LCNOT/_00000.java); 
 
 [我写了首诗，把滑动窗口算法算法变成了默写题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485141&idx=1&sn=0e4583ad935e76e9a3f6793792e60734&chksm=9bd7f8ddaca071cbb7570b2433290e5e2628d20473022a5517271de6d6e50783961bebc3dd3b&scene=21#wechat_redirect)
 
-[`LC0076`](./LC0076.java); [`LC0567`](./LC0567.java); [`LC0438`](./LC0438.java); [`LC0003`](./LC0003.java); [`_00003`](./_00003.java); 
+[`LC0076`](./LC0076.java); [`LC0567`](./LC0567.java); [`LC0438`](./LC0438.java); [`LC0003`](./LC0003.java); [`_00003`](./LCNOT/_00003.java); 
 
 [一个方法团灭 LeetCode 股票买卖问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484508&idx=1&sn=42cae6e7c5ccab1f156a83ea65b00b78&chksm=9bd7fa54aca07342d12ae149dac3dfa76dc42bcdd55df2c71e78f92dedbbcbdb36dec56ac13b&scene=21#wechat_redirect)
 
@@ -27,15 +27,15 @@ slogan: 偷懒掉的都要补回来
 
 [一个方法团灭 LeetCode 打家劫舍问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484800&idx=1&sn=1016975b9e8df0b8f6df996a5fded0af&chksm=9bd7fb88aca0729eb2d450cca8111abd8f861236b04125ce556171cb520e298ddec4d90823b3&scene=21#wechat_redirect)
 
-[`_00001`](./_00001.java); 
+[`_00001`](./LCNOT/_00001.java); 
 
 [一个方法解决三道区间问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487316&idx=1&sn=95cfbbd24f1cb5d8c07c71c2ba15246a&chksm=9bd7f15caca0784ab7bce7f36a6eb9118de2a573515a99948168ed93b25069a3b7bf85cf50a5&scene=21#wechat_redirect)
 
-[`_00002`](./_00002.java); 
+[`_00002`](./LCNOT/_00002.java); 
 
 [一个方法团灭 nSum 问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485789&idx=1&sn=efc1167b85011c019e05d2c3db1039e6&chksm=9bd7f755aca07e43405baeac62c76b44d8438fe8a69ae77e87cbb5121e71b6ee46f4c626eb98&scene=21#wechat_redirect)
 
-[`_00004`](./_00004.java); 
+[`_00004`](./LCNOT/_00004.java); 
 
 [手把手带你刷二叉树（第一期）](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487126&idx=1&sn=4de13e66397bc35970963c5a1330ce18&chksm=9bd7f09eaca0798853c41fba05ad5fa958b31054eba18b69c785ae92f4bd8e4cc7a2179d7838&scene=21#wechat_redirect)
 

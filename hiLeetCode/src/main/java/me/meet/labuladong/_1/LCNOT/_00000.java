@@ -1,4 +1,4 @@
-package me.meet.labuladong._1;
+package me.meet.labuladong._1.LCNOT;
 
 import java.util.HashMap;
 import java.util.Map;

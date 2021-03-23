@@ -1,4 +1,4 @@
-package me.meet.labuladong._0;
+package me.meet.labuladong._0.LCNOT;
 
 public final class _00000 {
     private _00000() {
@@ -90,9 +90,9 @@ public final class _00000 {
         }
 
 
-        if (left >= nums.length || target != nums[left]) {
-            return -1;
-        }
+//        if (left >= nums.length || target != nums[left]) {
+//            return -1;
+//        }
         return left - 1; // 注意
     }
 
@@ -105,14 +105,14 @@ public final class _00000 {
 
     private static void testLeftBinarySearch0() {
         int[] nums = new int[]{0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 7, 8, 9};
-        int target = 16;
+        int target = 6;
         int idx = leftBinarySearch0(nums, target);
         System.out.println(idx);
     }
 
     private static void testRightBinarySearch0() {
         int[] nums = new int[]{0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 7, 8, 9};
-        int target = 16;
+        int target = 6;
         int idx = rightBinarySearch0(nums, target);
         System.out.println(idx);
     }
