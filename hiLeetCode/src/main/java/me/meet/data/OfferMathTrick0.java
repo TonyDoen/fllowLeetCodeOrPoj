@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class OfferMathTrick0 {
     /**
+     * url: https://juejin.im/post/5c909c25f265da611d742410
      * 题目：
      * 给你一个数 N，输出 N! 的值。
      *
