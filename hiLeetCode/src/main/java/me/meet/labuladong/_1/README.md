@@ -75,4 +75,13 @@ slogan: 偷懒掉的都要补回来
 
 [`_00006`](./LCNOT/_00006.java); 
 
+[团灭 LeetCode 股票买卖问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484508&idx=1&sn=42cae6e7c5ccab1f156a83ea65b00b78&chksm=9bd7fa54aca07342d12ae149dac3dfa76dc42bcdd55df2c71e78f92dedbbcbdb36dec56ac13b&scene=21#wechat_redirect)
+
+[`LC0188`](../_0/LC0188.java);
+
+[团灭 LeetCode 打家劫舍问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484800&idx=1&sn=1016975b9e8df0b8f6df996a5fded0af&chksm=9bd7fb88aca0729eb2d450cca8111abd8f861236b04125ce556171cb520e298ddec4d90823b3&scene=21#wechat_redirect)
+
+[`LC0188`](../_0/LCNOT/_00001.java);
+
+
 
