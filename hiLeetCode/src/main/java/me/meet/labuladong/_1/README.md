@@ -71,4 +71,8 @@ slogan: 偷懒掉的都要补回来
 
 [`_00005`](./LCNOT/_00005.java); 
 
+[经典动态规划：四键键盘](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484469&idx=1&sn=e8d321c8ad62483874a997e9dd72da8f&chksm=9bd7fa3daca0732b316aa0afa58e70357e1cb7ab1fe0855d06bc4a852abb1b434c01c7dd19d6&scene=21#wechat_redirect)
+
+[`_00006`](./LCNOT/_00006.java); 
+
 
