@@ -63,5 +63,25 @@ slogan: 偷懒掉的都要补回来
 
 [`_00004`](./LCNOT/_00004.java); 
 
+[经典动态规划：戳气球](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485172&idx=1&sn=b860476b205b04f960ea0de6f70d3553&chksm=9bd7f8fcaca071eaeb934ae5573e550699f95e0491c89bafa1c298b852b1f6fc19796ab7ef84&scene=21#wechat_redirect)
+
+[`LC0312`](./LC0312.java); 
+
+[经典动态规划：博弈问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484731&idx=4&sn=83fdd556c0d7c638b7a0df72129c0268&chksm=9bd7fb33aca07225f0528761352f1767de44debe2bf5210245f3d2d17b7ec23a70ef574505ef&scene=21#wechat_redirect)
+
+[`_00005`](./LCNOT/_00005.java); 
+
+[经典动态规划：四键键盘](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484469&idx=1&sn=e8d321c8ad62483874a997e9dd72da8f&chksm=9bd7fa3daca0732b316aa0afa58e70357e1cb7ab1fe0855d06bc4a852abb1b434c01c7dd19d6&scene=21#wechat_redirect)
+
+[`_00006`](./LCNOT/_00006.java); 
+
+[团灭 LeetCode 股票买卖问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484508&idx=1&sn=42cae6e7c5ccab1f156a83ea65b00b78&chksm=9bd7fa54aca07342d12ae149dac3dfa76dc42bcdd55df2c71e78f92dedbbcbdb36dec56ac13b&scene=21#wechat_redirect)
+
+[`LC0188`](../_0/LC0188.java);
+
+[团灭 LeetCode 打家劫舍问题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484800&idx=1&sn=1016975b9e8df0b8f6df996a5fded0af&chksm=9bd7fb88aca0729eb2d450cca8111abd8f861236b04125ce556171cb520e298ddec4d90823b3&scene=21#wechat_redirect)
+
+[`LC0188`](../_0/LCNOT/_00001.java);
+
 
 

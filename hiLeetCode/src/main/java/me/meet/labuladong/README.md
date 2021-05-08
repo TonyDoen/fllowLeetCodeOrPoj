@@ -1,6 +1,8 @@
 
 slogan: 偷懒掉的都要补回来
 
+url: https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA
+
 ## [0. 第零章](./_0)
     学习算法和刷题的框架思维
     动态规划解题套路框架
