@@ -1,6 +1,8 @@
 package me.meet.labuladong._1;
 
-public class LC0312 {
+public final class LC0312 {
+    private LC0312() {
+    }
 
     /**
      *
