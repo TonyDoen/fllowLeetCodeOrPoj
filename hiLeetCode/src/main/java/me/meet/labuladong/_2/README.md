@@ -18,4 +18,9 @@ slogan: 偷懒掉的都要补回来
 
 [`_00000`](./LCNOT/_00000.java); [`_00001`](./LCNOT/_00001.java); 
 
+#### 2.3 手把手刷二叉树（训练递归思维）
+
+[手把手带你刷二叉树（第一期）](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487126&idx=1&sn=4de13e66397bc35970963c5a1330ce18&chksm=9bd7f09eaca0798853c41fba05ad5fa958b31054eba18b69c785ae92f4bd8e4cc7a2179d7838&scene=21#wechat_redirect)
+
+[`_00000`](./LC0226.java);
 
