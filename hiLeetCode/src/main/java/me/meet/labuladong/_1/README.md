@@ -83,5 +83,12 @@ slogan: 偷懒掉的都要补回来
 
 [`_00001`](../_0/LCNOT/_00001.java);
 
+[有限状态机之KMP字符匹配算法](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484731&idx=2&sn=d9d6b24c7f94d5e43e08666e82251984&chksm=9bd7fb33aca0722548580dd27eb49880dc126ef87aeefedc33aa0f754f54691af6b09b41f45f&scene=21#wechat_redirect)
+
+
+
+[构造回文的最小插入次数](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247486872&idx=1&sn=45b0cf438d3fb140ad6d06e660a7fa4d&chksm=9bd7f390aca07a86c37e440bb9d5fb936be0a1283c781cc2ad867f6e890b2e1ff26545a36158&scene=21#wechat_redirect)
+
+[`LC1312`](./LC1312.java);
 
 
