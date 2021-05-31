@@ -263,23 +263,23 @@ public final class LC0226 {
 
     private static void testInvertTree() {
         TreeNode root = TreeNode.prepareTree1();
-        root.println();
+        root.print();
 
         TreeNode rs = invertTree(root);
-        rs.println();
+        rs.print();
     }
 
     private static void testConnect() {
         TreeNode root = TreeNode.prepareTree4();
-        root.println();
+        root.print();
 
         connect(root);
-        root.println();
+        root.print();
     }
 
     private static void testFlatten() {
         TreeNode root = TreeNode.prepareTree4();
-        root.println();
+        root.print();
 
         flatten(root);
         root.println();
