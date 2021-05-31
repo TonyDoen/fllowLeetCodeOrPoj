@@ -22,5 +22,8 @@ slogan: 偷懒掉的都要补回来
 
 [手把手带你刷二叉树（第一期）](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487126&idx=1&sn=4de13e66397bc35970963c5a1330ce18&chksm=9bd7f09eaca0798853c41fba05ad5fa958b31054eba18b69c785ae92f4bd8e4cc7a2179d7838&scene=21#wechat_redirect)
 
-[`_00000`](./LC0226.java);
+[`LC0226`](./LC0226.java);
 
+[手把手带你刷二叉树（第二期）](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487270&idx=1&sn=2f7ad74aabc88b53d94012ceccbe51be&chksm=9bd7f12eaca078384733168971147866c140496cb257946f8170f05e46d16099f3eef98d39d9&scene=21#wechat_redirect)
+
+[`LC0654`](./LC0654.java);
