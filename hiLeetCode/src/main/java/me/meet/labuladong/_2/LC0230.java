@@ -284,6 +284,134 @@ public final class LC0230 {
         return false;
     }
 
+    /**
+     * 在 BST 中插入一个数
+     * 对数据结构的操作无非遍历 + 访问，遍历就是「找」，访问就是「改」。具体到这个问题，插入一个数，就是先找到插入位置，然后进行插入操作。
+     * 上一个问题，我们总结了 BST 中的遍历框架，就是「找」的问题。
+     * 直接套框架，
+     * 加上「改」的操作即可。一旦涉及「改」，函数就要返回TreeNode类型，并且对递归调用的返回值进行接收。
+     */
+    static TreeNode insertBST(TreeNode root, int val) {
+        // 找到空位置插入新节点
+        if (root == null) return new TreeNode(val);
+        // if (root.val == val)
+        //     BST 中一般不会插入已存在元素
+        if (root.getVal() < val) root.setRight(insertBST(root.getRight(), val));
+        if (root.getVal() > val) root.setLeft(insertBST(root.getLeft(), val));
+        return root;
+    }
+
+    /**
+     * 三、在 BST 中删除一个数
+     * 这个问题稍微复杂，跟插入操作类似，先「找」再「改」，先把框架写出来再说：
+     * TreeNode deleteNode(TreeNode root, int key) {
+     *     if (root.val == key) {
+     *         // 找到啦，进行删除
+     *     } else if (root.val > key) {
+     *         // 去左子树找
+     *         root.left = deleteNode(root.left, key);
+     *     } else if (root.val < key) {
+     *         // 去右子树找
+     *         root.right = deleteNode(root.right, key);
+     *     }
+     *     return root;
+     * }
+     *
+     * 找到目标节点了，比方说是节点A，如何删除这个节点，这是难点。因为删除节点的同时不能破坏 BST 的性质。有三种情况，用图片来说明。
+     *
+     * 情况 1：A恰好是末端节点，两个子节点都为空，那么它可以当场去世了。
+     *         10                               10
+     *       /   \                            /   \
+     *     5       15         ====>         5      15
+     *   /  \       \                     /          \
+     * 1     6？     20                  1            20
+     *
+     * case1: no child
+     * => if (root.left == null && root.right == null)
+     *     return null;
+     *
+     *
+     * 情况 2：A只有一个非空子节点，那么它要让这个孩子接替自己的位置。
+     *         10                               10
+     *       /   \                            /   \
+     *     5      15？         ====>        5      20
+     *   /  \       \                     /  \
+     * 1     6       20                 1     6
+     *
+     * case2: only one child
+     * // 排除了情况 1 之后
+     * if (root.left == null) return root.right;
+     * if (root.right == null) return root.left;
+     *
+     *
+     * 情况 3：A有两个子节点，麻烦了，为了不破坏 BST 的性质，A必须找到左子树中最大的那个节点，或者右子树中最小的那个节点来接替自己。我们以第二种方式讲解。
+     *        10                               10
+     *      /   \                            /   \
+     *    5？     15          ====>         6      15
+     *  /  \       \                     /          \
+     *1     6       20                  1            20
+     *
+     * case3: two children
+     *
+     * if (root.left != null && root.right != null) {
+     *     // 找到右子树的最小节点
+     *     TreeNode minNode = getMin(root.right);
+     *     // 把 root 改成 minNode
+     *     root.val = minNode.val;
+     *     // 转而去删除 minNode
+     *     root.right = deleteNode(root.right, minNode.val);
+     * }
+     *
+     *
+     * 三种情况分析完毕，填入框架，简化一下代码：
+     */
+    static TreeNode deleteBST(TreeNode root, int val) {
+        if (root == null) return null;
+        if (root.getVal() == val) {
+            // 这两个 if 把情况 1 和 2 都正确处理了
+            if (root.getLeft() == null) return root.getRight();
+            if (root.getRight() == null) return root.getLeft();
+            // 处理情况 3
+            // TreeNode minNode = getMin(root.right);
+            // 找到右子树的最小节点; BST 最左边的就是最小的; 即 右子树的最左边的 节点
+            TreeNode minNode = root.getRight();
+            while (minNode.getLeft() != null) minNode = minNode.getLeft();
+
+            root.setVal(minNode.getVal());
+            root.setRight(deleteBST(root.getRight(), minNode.getVal()));
+        } else if (root.getVal() > val) {
+            root.setLeft(deleteBST(root.getLeft(), val));
+        } else if (root.getVal() < val) {
+            root.setRight(deleteBST(root.getRight(), val));
+        }
+        return root;
+    }
+
+    /**
+     * 删除操作就完成了。
+     * 注意一下，这个删除操作并不完美，因为我们一般不会通过root.val = minNode.val修改节点内部的值来交换节点，而是通过一系列略微复杂的链表操作交换root和minNode两个节点。
+     * 因为具体应用中，val域可能会是一个复杂的数据结构，修改起来非常麻烦；而链表操作无非改一改指针，而不会去碰内部数据。
+     *
+     * 不过这里我们暂时忽略这个细节，旨在突出 BST 基本操作的共性，以及借助框架逐层细化问题的思维方式。
+     *
+     *
+     * 最后总结
+     * 通过这篇文章，我们总结出了如下几个技巧：
+     * 1、如果当前节点会对下面的子节点有整体影响，可以通过辅助函数增长参数列表，借助参数传递信息。
+     * 2、在二叉树递归框架之上，扩展出一套 BST 代码框架：
+     * void BST(TreeNode root, int target) {
+     *     if (root.val == target)
+     *         // 找到目标，做点什么
+     *     if (root.val < target)
+     *         BST(root.right, target);
+     *     if (root.val > target)
+     *         BST(root.left, target);
+     * }
+     *
+     * 3、根据代码框架掌握了 BST 的增删查改操作。
+     *
+     */
+
     private static void testKthSmallest() {
         TreeNode root = TreeNode.prepareTree4();
         root.print();
@@ -317,6 +445,32 @@ public final class LC0230 {
         System.out.println(rs);
     }
 
+    private static void testInsertBST() {
+        TreeNode root = TreeNode.prepareTree4();
+        root.print();
+
+        int val = 11;
+        insertBST(root, 12);
+        insertBST(root, 13);
+        insertBST(root, 14);
+        insertBST(root, 15);
+        TreeNode rs = insertBST(root, val);
+        rs.print();
+    }
+
+    private static void testDeleteBST() {
+        TreeNode root = TreeNode.prepareTree4();
+        insertBST(root, 15);
+        insertBST(root, 12);
+        insertBST(root, 14);
+        insertBST(root, 13);
+        root.print();
+
+        int val = 7;
+        TreeNode rs = deleteBST(root, val);
+        rs.print();
+    }
+
     public static void main(String[] args) {
         // 230. 二叉搜索树中第K小的元素
         testKthSmallest();
@@ -326,5 +480,9 @@ public final class LC0230 {
         testIsValidBST();
         // 在 BST 中搜索一个数
         testIsInBST();
+        // 在 BST 中插入一个数
+        testInsertBST();
+        // 在 BST 中删除一个数
+        testDeleteBST();
     }
 }
