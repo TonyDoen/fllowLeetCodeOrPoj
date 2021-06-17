@@ -65,3 +65,7 @@ slogan: 偷懒掉的都要补回来
 [Union-Find 算法怎么应用](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484759&idx=1&sn=a88337164c741b9740e50523b41b7659&chksm=9bd7fb5faca07249c15e925e596e8ab071731f0c996b1ba3e58a1b45052900a23278114f2720&scene=21#wechat_redirect)
 
 [`_00004`](./LCNOT/_00004.java); 
+
+[算法就像搭乐高：带你手撸 LRU 算法](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247486428&idx=1&sn=3611a14535669ba3372c73e24121247c&chksm=9bd7f5d4aca07cc28c02c3411d0633fc12c94c2555c08cbfaa2ccd50cc2d25160fb23bccce7f&scene=21#wechat_redirect)
+
+[`LC0146`](./LC0146.java); 
