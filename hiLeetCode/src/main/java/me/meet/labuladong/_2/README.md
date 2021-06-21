@@ -73,3 +73,7 @@ slogan: 偷懒掉的都要补回来
 [算法就像搭乐高：带你手撸 LFU 算法](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247486545&idx=1&sn=315ebfafa82c0dd3bcd9197eb270a7b6&chksm=9bd7f259aca07b4f063778509b3803993bc0d6cdaff32c076a102547b0afb82a5eea6119ed1a&scene=21#wechat_redirect)
 
 [`_00005`](./LCNOT/_00005.java); 
+
+[一道求中位数的算法题把我整不会了](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487197&idx=1&sn=0cb587fda164bda7fbcaa54cb9630fde&chksm=9bd7f0d5aca079c3ec2e68ba81a3bbd52e4260f413fa50c6d70fbffc8dd418ad68423cc1f482&scene=21#wechat_redirect)
+
+[`LC0295`](./LC0295.java); 
