@@ -25,8 +25,18 @@ public final class _00006 {
      * int right(int root) {
      *     return root * 2 + 1;
      * }
-     * 
+     *
      * 画个图你立即就能理解了，注意数组的第一个索引 0 空着不用：
+     *  i         0    1    2    3    4    5    6    7
+     *  arr[i]    *    T    S    R    P    N    O    A
+     *
+     *                 堆顶
+     *                 T
+     *                   \    \
+     *                      S    R
+     *                             \     \    \    \
+     *                                P    N    O    A
+     *                                堆底
      *
      *
      */
