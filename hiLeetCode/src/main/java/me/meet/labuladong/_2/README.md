@@ -77,3 +77,9 @@ slogan: 偷懒掉的都要补回来
 [一道求中位数的算法题把我整不会了](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487197&idx=1&sn=0cb587fda164bda7fbcaa54cb9630fde&chksm=9bd7f0d5aca079c3ec2e68ba81a3bbd52e4260f413fa50c6d70fbffc8dd418ad68423cc1f482&scene=21#wechat_redirect)
 
 [`LC0295`](./LC0295.java); 
+
+[设计朋友圈时间线功能](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484499&idx=1&sn=64f75d4bdbb4c5777ba199aae804d138&chksm=9bd7fa5baca0734dc51f588af913140560b994e3811dac6a7fa8ccfc2a31aca327f1faf964c2&scene=21#wechat_redirect)
+
+[单调栈结构解决三道算法题](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487704&idx=1&sn=eb9ac24c644aa0950638c9b20384e982&chksm=9bd7eed0aca067c6b4424c40b7f234c815f83edfbb5efc9f51581335f110e9577114a528f3ec&scene=21#wechat_redirect)
+
+[`LC0295`](./LC0295.java); 
